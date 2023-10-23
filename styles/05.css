@@ -18,23 +18,60 @@ header>h1 {
     text-align: center;
 }
 
-nav {
-    background-color: aquamarine;
-
-}
-
 ul {
-    list-style-type:none;
+    list-style-type: none;
     display: flex;
     height: 80px;
     justify-content: right;
-    align-items:center;
+    align-items: center;
 }
 
-li{
-    background-color:antiquewhite;
-   width:80px;
-   margin-left: 10px;
-   padding: 5px;
-   text-align: center;
+li {
+    background-color: cadetblue;
+    color: bisque;
+    width: 80px;
+    margin-left: 10px;
+    padding: 10px 5px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+section,
+article {
+    margin: 30px;
+    padding: 10px;
+
+}
+
+section>p {
+    margin-top: 20px;
+}
+
+article {
+    background-color: white;
+}
+
+article>div {
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divimg {
+    width: 30%;
+    text-align: center;
+}
+
+article p {
+    width: 70%;
+}
+
+img{
+    border-radius: 50px;
 }
