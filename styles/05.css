@@ -1,1 +1,40 @@
-main{background-color: aliceblue;}
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+main {
+    background-color: aliceblue;
+    margin-left: 20%;
+    width: 60%;
+}
+
+header {
+    padding: 50px;
+}
+
+header>h1 {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+nav {
+    background-color: aquamarine;
+
+}
+
+ul {
+    list-style-type:none;
+    display: flex;
+    height: 80px;
+    justify-content: right;
+    align-items:center;
+}
+
+li{
+    background-color:antiquewhite;
+   width:80px;
+   margin-left: 10px;
+   padding: 5px;
+   text-align: center;
+}
