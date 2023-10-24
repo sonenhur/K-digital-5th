@@ -57,7 +57,7 @@ article {
 }
 
 article>div {
-    background-color: bisque;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,6 +72,28 @@ article p {
     width: 70%;
 }
 
-img{
-    border-radius: 50px;
+article img {
+    border-radius: 25%;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 25px;
+}
+
+footer>div {
+    margin: 10px
+}
+
+footer p {
+    text-align: center;
+}
+
+.footerp1 {
+    margin: 10px;
+}
+
+.footerp2 {
+    font-size: small;
 }
