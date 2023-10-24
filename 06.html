@@ -27,7 +27,9 @@
 
         }
 
-        main,section,ul {
+        main,
+        section,
+        ul {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -40,6 +42,27 @@
             padding: 20px;
             margin: 20px;
         }
+
+        span {
+            background-color: beige;
+            color: white;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 30%;
+            height: 40px;
+            margin: 5px;
+            padding: 5px;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width:768px) {
+            main{
+                width: 100vw;
+                margin-left: 0px;
+            }
+        }
     </style>
     <title>css복습</title>
 </head>
@@ -49,10 +72,16 @@
         <section>
             <ul>
                 <li>
-                    박스1
+                    <span>
+                        박스1
+                    </span>
+                    <span>
+                        입니다
+                    </span>
                 </li>
-                <li>
-                    박스2
+                <li><span style="background-color: bisque; color: blue;">
+                        박스2
+                    </span>
                 </li>
             </ul>
 
