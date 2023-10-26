@@ -1,7 +1,16 @@
-main {
+#btDiv {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 80vw;
-    margin-left: 10vw;
+}
+
+#msg {
+    background-color: burlywood;
+    width: 50%;
+    height: 80px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 외부 스타일 연결 -->
     <link rel="stylesheet" type="text/css" href="./styles/container.css">
+    <link rel="stylesheet" type="text/css" href="./styles/07.css">
     <title>자바스크립트</title>
     <script>
-        function hello1() { alert("Hello! 버튼1"); }
-        function hello2() { alert("Hello! 버튼2"); }
+        const hello = (n) => {
+            // alert("Hello! 버튼" + n);
+            // document.getElementById('msg').innerHTML = "<h1>Hello! 버튼" + n + "</h1>";
+            // document.querySelector('#msg').innerHTML = "<h1>Hello! 버튼" + n + "</h1>";
+            document.querySelector('.cmsg').innerHTML = "<h1>Hello! 버튼" + n + "</h1>";
+        }
     </script>
 </head>
 
@@ -24,10 +29,12 @@
         </nav>
     </header>
     <main>
-        <h1>자바스크립트</h1>
-        <div>
-            <button onclick="hello1()">버튼 1</button>
-            <button onclick="hello2()">버튼 2</button>
+        <h1>자바스크립트 01</h1>
+        <div id="btDiv">
+            <button onclick="hello(1)">Push Button 1</button>
+            <button onclick="hello(2)">Push Button 2</button>
+        </div>
+        <div id="msg" class="cmsg">
         </div>
     </main>
 </body>
