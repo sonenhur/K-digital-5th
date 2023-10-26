@@ -1,4 +1,4 @@
-# 호스팅 주소: https://github.com/sonenhur/k5_htmlcss
+# 호스팅 주소: https://sonenhur.github.io/k5_htmlcss/
 
 # HTML
 - [x] 기본태그
