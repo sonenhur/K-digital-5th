@@ -3,16 +3,31 @@
     padding: 0px;
 }
 
+main,
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 80vw;
-    height: 10vh;
     padding: 10px;
-    background-color: black;
-    color: white;
     margin-left: 10vw;
+}
+
+main {
+    margin-top: 50px;
+    background-color: orangered;
+    color: orange;
+    flex-direction: column;
+}
+
+header {
+    height: 10vh;
+    justify-content: space-between;
+    background-color: orange;
+    color: orangered;
+}
+
+header>h1 {
+    margin-left: 10px;
 }
 
 nav>ul {
@@ -27,18 +42,32 @@ nav li {
     padding: 5px;
 }
 
-nav a {
-    text-decoration: none;
-    color: white;
+nav a:hover {
+    background-color: orangered;
+    color: orange
 }
 
-/* main {
-    background-color: white;
-    margin-left: 15%;
-    width: 60vw;
-    height: 100vh;
+nav a {
+    text-decoration: none;
+    color: orangered;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+button {
     display: flex;
-    flex-direction: column;
-    justify-content:top;
+    justify-content: center;
     align-items: center;
-} */
+    margin: 5px;
+    padding: 10px;
+    background-color: olive;
+    color: sandybrown;
+    border: 0px;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: sandybrown;
+    color: olive;
+    cursor: pointer;
+}

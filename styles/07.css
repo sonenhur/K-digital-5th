@@ -1,1 +1,7 @@
-main{background-color: aqua;}
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+    margin-left: 10vw;
+}
