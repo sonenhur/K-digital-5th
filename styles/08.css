@@ -1,0 +1,40 @@
+header {
+    height: 10vh;
+    justify-content: space-between;
+    background-color: oldlace;
+    color: burlywood;
+}
+
+main {
+    margin-top: 50px;
+    background-color: white;
+    color: white;
+    flex-direction: column;
+}
+
+section {
+    width: 80%;
+    padding: 20px;
+    border: 2px solid bisque;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#secDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.cmsg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btC1{margin: 20px;}

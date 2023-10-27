@@ -1,12 +1,25 @@
-#btDiv {
+section {
+    width: 80%;
+    padding: 20px;
+    border: 2px solid olive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+main {}
+
+.btC {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#msg {
+.cmsg {
     background-color: burlywood;
-    width: 50%;
+    width: 80%;
     height: 80px;
     color: white;
     font-weight: bold;

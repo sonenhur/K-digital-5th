@@ -8,13 +8,7 @@
     <link rel="stylesheet" type="text/css" href="./styles/container.css">
     <link rel="stylesheet" type="text/css" href="./styles/07.css">
     <title>자바스크립트</title>
-    <script>
-        const hello = (n) => {
-            // alert("Hello! 버튼" + n);
-            // document.getElementById('msg').innerHTML = "<h1>Hello! 버튼" + n + "</h1>";
-            // document.querySelector('#msg').innerHTML = "<h1>Hello! 버튼" + n + "</h1>";
-            document.querySelector('.cmsg').innerHTML = "<h1>Hello! 버튼" + n + "</h1>";
-        }
+    <script src="./script/07.js">
     </script>
 </head>
 
@@ -29,13 +23,23 @@
         </nav>
     </header>
     <main>
-        <h1>자바스크립트 01</h1>
-        <div id="btDiv">
-            <button onclick="hello(1)">Push Button 1</button>
-            <button onclick="hello(2)">Push Button 2</button>
-        </div>
-        <div id="msg" class="cmsg">
-        </div>
+        <section>
+            <h1>자바스크립트 01</h1>
+            <div id="btDiv" class="btC">
+                <button onclick="hello(1)">Push Button 1</button>
+                <button onclick="hello(2)">Push Button 2</button>
+            </div>
+            <div id="msg1" class="cmsg">
+            </div>
+        </section>
+        <section>
+            <h1>자바스크립트 02</h1>
+            <div id="btDiv2" class="btC">
+            </div>
+            <div id="msg2" class="cmsg">
+            </div>
+
+        </section>
     </main>
 </body>
 
