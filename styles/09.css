@@ -41,3 +41,28 @@ section {
 .btC1 {
     margin: 20px;
 }
+
+button {
+    background-color: white;
+    color: orange;
+    border: 2px solid orange;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+}
+
+
+button:hover {
+    background-color: orange;
+    color: white;
+}
+
+#txt {
+    height: 40px;
+}
