@@ -1,9 +1,27 @@
-#sec2 {
-    width: auto;
+form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: aqua;
+}
+
+#sec2 {
+    background-color: beige;
+}
+
+.fdiv {
+    background-color: blue;
+    width: 45%;
+    margin: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 select {
     width: auto;
     height: 32px;
+    margin: 10px;
 }
