@@ -14,8 +14,12 @@
 
 <body>
     <header>
-        <h1>업다운 게임</h1>
+        <h1>자바스크립트</h1>
         <nav>
+            <ul>
+                <li><a href='https://www.w3schools.com/html/default.asp'>w3schools HTML</a></li>
+                <li><a href='https://www.w3schools.com/js/default.asp'>w3schools JS</a></li>
+            </ul>
         </nav>
     </header>
     <main>
@@ -27,16 +31,17 @@
                 <img src="./images/04_updown/what.png" />
             </div>
             <form>
-                <div id="btDIv">
-                    <p>1에서 6까지의 숫자를 입력하세요:</p>
-                    <input id="txt" type="number" placeholder="입력" min="1" max="6">
-                    <button id='bt' onclick="playGame()">확인</button>
-                    <div id="result"></div>
+                <div id='btDiv1'>
+                    <button id='bt1'>랜덤 수 생성하기</button>
                 </div>
             </form>
+            <div id='btDiv2'>
+                <input type='number' id='txt' name='txt' placeholder='숫자입력' />
+                <button id='bt2'>확인</button>
+            </div>
         </section>
         <section id="sec3">
-            <h1>임의의 수를 선택하세요. </h1>
+            <h1>임의의 수를 선택하세요</h1>
         </section>
     </main>
 </body>
