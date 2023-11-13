@@ -3,25 +3,49 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
+}
+
+#sec1 {
+    background-color: #A2AAAD;
 }
 
 #sec2 {
-    background-color: beige;
+    background-color: white;
 }
 
 .fdiv {
-    background-color: blue;
+    background-color: #A2AAAD;
     width: 45%;
-    margin: 20px;
-    height: 20px;
-    display: flex;
+    padding: 20px;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+}
+
+.fdiv>div {
+    background-color: white;
+    margin: 4px;
+    padding: 24px;
 }
 
 select {
-    width: auto;
+    width: 100%;
     height: 32px;
-    margin: 10px;
+}
+
+input[type=number] {
+    width: 80%;
+    height: 32px;
+}
+
+#unit1,
+#unit2 {
+    width: 20%;
+    height: 32px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#txt2 {
+    background-color: ghostwhite;
 }
