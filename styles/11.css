@@ -43,3 +43,8 @@ button:hover {
     color: white;
     cursor: pointer;
 }
+
+#txt1,
+#txt2 {
+    text-align: center;
+}
