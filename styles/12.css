@@ -32,7 +32,6 @@ input[type=text] {
 button {
     background-color: white;
     color: grey;
-    font-size: medium;
 }
 
 button:hover {
@@ -43,6 +42,14 @@ button:hover {
 
 #txt1,
 #txt2 {
+    width: 100%;
     text-align: center;
-    font-size: medium;
+}
+
+#txt1 {
+    font-size: large;
+}
+
+#d1 {
+    width: 100%;
 }
