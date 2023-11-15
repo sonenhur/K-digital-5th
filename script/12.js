@@ -62,7 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
             let key = bt.innerHTML.trim();
             key = key.split('→');
             // console.log(emoji[key[0]], emoji[key[1]]);
-
+            // arr = arr.map((item)=>{
+            // let key = 
+            //}
+            //
             arr = arr.map(item => item == emoji[key[0]] ? emoji[key[1]] : item);
             txt1.value = arr.join(' ');
         })
