@@ -6,24 +6,21 @@ form {
 }
 
 #sec1 {
-    background-color: #A2AAAD;
+    background-color: #f1f1f1;
 }
 
 #sec2 {
-    background-color: white;
+    background-color: #fff;
 }
 
 .fdiv {
-    background-color: #A2AAAD;
+    background-color: #f1f1f1;
     width: 45%;
     padding: 20px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
 }
 
 .fdiv>div {
-    background-color: white;
+    background-color: #fff;
     margin: 4px;
     padding: 24px;
 }
@@ -47,5 +44,5 @@ input[type=number] {
 }
 
 #txt2 {
-    background-color: ghostwhite;
+    background-color: #fafafa;
 }

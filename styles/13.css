@@ -1,0 +1,63 @@
+form {
+    width: 100%;
+}
+
+.fdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sec1 {
+    border: 10%;
+    width: 100%;
+}
+
+.div1 {
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+}
+
+.div2 {
+    width: 100%;
+    margin: 10px;
+}
+
+input[type=text] {
+    width: 80%;
+    height: 40px;
+}
+
+button {
+    background-color: white;
+    color: grey;
+}
+
+button:hover {
+    background-color: #A2AAAD;
+    color: white;
+    cursor: pointer;
+}
+
+#txt1,
+#txt2 {
+    width: 100%;
+    text-align: center;
+}
+
+#txt1 {
+    font-size: large;
+}
+
+#d1 {
+    width: 100%;
+}
+
+.sp {
+    font-size: x-large;
+}
+
+.sp:hover {
+    cursor: pointer;
+}
