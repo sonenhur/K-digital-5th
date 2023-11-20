@@ -17,6 +17,11 @@
     color: white;
 }
 
+img {
+    width: 100%;
+    height: 100%;
+}
+
 #btdiv>button {
     background-color: white;
     color: #007AFF;
