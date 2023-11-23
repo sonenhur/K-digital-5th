@@ -1,48 +1,63 @@
-form {
-    width: 100%;
+body {
+    font-family: 'San Francisco', 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
 }
 
-.fdiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#sec1 {
-    border: 10%;
-    width: 100%;
-}
-
-.div1 {
-    width: 100%;
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
     text-align: center;
-    margin: 10px;
 }
 
-.div2 {
-    width: 100%;
-    margin: 10px;
+nav ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-input[type=text] {
-    width: 80%;
-    height: 40px;
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    margin: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+input[type='number'] {
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
 }
 
 button {
-    background-color: white;
-    color: grey;
-    font-size: medium;
-}
-
-button:hover {
-    background-color: #A2AAAD;
+    background-color: #007bff;
     color: white;
-    cursor: pointer;
-}
-
-#txt1,
-#txt2 {
+    border: none;
+    padding: 10px 20px;
     text-align: center;
-    font-size: medium;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }

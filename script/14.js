@@ -1,33 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const bt = document.querySelectorAll("#d2>button");
-    const d1 = document.querySelector("#d1");
-    let arr = [];
+    // const sps = document.querySelectorAll(".sp");
+    // console.log(sps[0])
+    // console.log(sps[1])
+    // console.log(sps[2])
+    const sp0 = document.querySelector("#sp0")
+    const sp1 = document.querySelector("#sp1")
+    const sp2 = document.querySelector("#sp2")
+    let n = 0;
+    sp0.innerHTML = 0;
+    console.log(sp0)
+    console.log(sp1)
+    console.log(sp2)
 
-    bt.forEach(button => {
-        button.addEventListener("click", (e) => {
-            e.preventDefault();
+    sp1.addEventListener("click", () => {
+        console.log(sp1.innerHTML)
+        n = n + 1
+        sp0.innerHTML = n;
+    })
+    sp2.addEventListener("click", () => {
+        console.log(sp2.innerHTML)
+        n = n - 1
+        if (n < 0) n = 0;
+        sp0.innerHTML = n;
+    })
 
-            arr.length = 0;  //배열초기화
-
-            while (arr.length < 7) { //로또 배열 생성
-                let n = Math.floor(Math.random() * 45) + 1; //1~45
-                if (!arr.includes(n)) arr.push(n);
-            }
-
-            let tags;
-            tags = arr.map((item, idx) =>
-                idx == 5 ?
-                    `<span class='sp' id='sp${Math.floor(parseInt(item) / 10)}'>
-                ${item}
-                </span>
-                <span id='plus' class= 'sp' > + </span>`
-                    : `<span class= 'sp' id = 'sp${Math.floor(parseInt(item) / 10)}' >
-                         ${item}
-                </span>`
-
-            )
-
-            d1.innerHTML = tags.join('');
-        });
-    });
 });

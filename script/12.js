@@ -1,73 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
-    //입력버튼
-    const bt12 = document.querySelectorAll(".bt12");
-    //삭제버튼
-    const bt13 = document.querySelectorAll(".bt13");
-    //변경버튼
-    const bt14 = document.querySelectorAll(".bt14");
+    // HTML 요소를 선택합니다.
     const txt1 = document.querySelector("#txt1");
-    // let arr = new Array();
-    //배열(array)
-    let arr = [];
-    //오브젝트(object)
-    const emoji = {
-        '사과': '🍎',
-        '바나나': '🍌',
-        '오렌지': '🍊',
-        '수박': '🍉',
-        '당근': '🥕',
-        '오이': '🥒',
-        '아보카도': '🥑',
-        '브로콜리': '🥦',
-    }
-    //입력처리
-    for (let bt of bt12) {
-        // console.log(bt)
-        bt.addEventListener("click", (event) => {
-            event.preventDefault();
+    const txt2 = document.querySelector("#txt2");
+    const bt1 = document.querySelector("#bt1");
+    const bt2 = document.querySelector("#bt2");
 
-            // let emoji;          //앞뒤공백제거
-            // switch (bt.innerHTML.trim()) {
-            //     case '사과': emoji = '🍎'; break;
-            //     case '바나나': emoji = '🍌'; break;
-            //     case '오렌지': emoji = '🍊'; break;
-            //     case '수박': emoji = '🍉'; break;
-            // }
+    // 회문 처리
+    bt1.addEventListener("click", (event) => {
+        event.preventDefault(); // 버튼의 기본 동작을 막습니다.
+        let result = "";
 
-            //조건식이 아닌 오브젝트로 처리 (파이썬에서 딕셔너리)
-            arr.push(emoji[bt.innerHTML.trim()]);
-            // console.log(arr);
-            txt1.value = arr.join(' ');
-        });
-    }
-    //삭제처리
-    for (let bt of bt13) {
-        bt.addEventListener("click", (e) => {
-            e.preventDefault();
+        // 입력된 문자열을 거꾸로 뒤집습니다.
+        for (let i = txt1.value.length - 1; i >= 0; i--) {
+            result += txt1.value[i];
+        }
 
-            // arr = arr.filter((item) => {
-            //     let key = bt.innerHTML.trim().slice(0, -3);
-            //     return item != emoji[key];
-            // });
-            // 단축 (매개변수가 하나만 있을 때 괄호 생략 가능)
-            // 단축 (바디 없이 리턴 하나만 있을 때 중괄호 생략 가능)
-            arr = arr.filter(item => item != emoji[bt.innerHTML.trim().slice(0, -3)])
-            txt1.value = arr.join(' ');
-        })
-    }
-    //수정,변경
-    for (let bt of bt14) {
-        bt.addEventListener("click", (e) => {
-            e.preventDefault();
-            let key = bt.innerHTML.trim();
-            key = key.split('→');
-            // console.log(emoji[key[0]], emoji[key[1]]);
-            // arr = arr.map((item)=>{
-            // let key = 
-            //}
-            //
-            arr = arr.map(item => item == emoji[key[0]] ? emoji[key[1]] : item);
-            txt1.value = arr.join(' ');
-        })
-    }
-});
+        // 뒤집은 문자열과 원래 문자열이 같으면 회문입니다.
+        if (result == txt1.value) txt2.value = '회문입니다';
+        else txt2.value = '회문이 아닙니다';
+    });
+
+    // 숫자 합계
+    bt2.addEventListener("click", (event) => {
+        event.preventDefault(); // 버튼의 기본 동작을 막습니다.
+        let sum = 0;
+
+        // 문자열에서 숫자를 찾아 합계를 계산합니다.
+        for (let c of txt1.value) {
+            if (!isNaN(c)) sum = sum + parseInt(c);
+        }
+
+        // 합계를 출력 영역에 표시합니다.
+        txt2.value = sum;
+    })
+})

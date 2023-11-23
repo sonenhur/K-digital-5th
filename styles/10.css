@@ -1,48 +1,60 @@
-form {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#sec1 {
+body {
+    font-family: 'San Francisco', 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #f1f1f1;
 }
 
-#sec2 {
-    background-color: #fff;
-}
-
-.fdiv {
-    background-color: #f1f1f1;
-    width: 45%;
+header {
+    background-color: #333;
+    color: white;
     padding: 20px;
+    text-align: center;
 }
 
-.fdiv>div {
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    margin: 20px;
+}
+
+#sec1,
+#sec2,
+#sec3 {
+    margin-bottom: 20px;
+    padding: 20px;
     background-color: #fff;
-    margin: 4px;
-    padding: 24px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
-select {
-    width: 100%;
-    height: 32px;
+#secDiv img {
+    width: 100px;
+    height: 100px;
 }
 
-input[type=number] {
-    width: 80%;
-    height: 32px;
-}
-
-#unit1,
-#unit2 {
-    width: 20%;
-    height: 32px;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-#txt2 {
-    background-color: #fafafa;
+#btDiv1 button,
+#btDiv2 button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }

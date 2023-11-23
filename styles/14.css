@@ -1,65 +1,63 @@
-#d1,
-#d2 {
+form {
     width: 100%;
+}
+
+.fdiv {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#d2>button {
-    width: 80%;
-    margin: auto;
-    background-color: #007AFF;
-    color: white;
-    border: none;
-    padding: 15px 32px;
+#sec1 {
+    border: 10%;
+    width: 100%;
+}
+
+.div1 {
+    width: 100%;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    transition-duration: 0.4s;
+    margin: 10px;
+}
+
+.div2 {
+    width: 100%;
+    margin: 10px;
+}
+
+input[type=text] {
+    width: 80%;
+    height: 40px;
+}
+
+button {
+    background-color: white;
+    color: grey;
+}
+
+button:hover {
+    background-color: #A2AAAD;
+    color: white;
     cursor: pointer;
 }
 
-#d2>button:hover {
-    background-color: white;
-    color: black;
-    border: 2px solid #007AFF;
+#txt1,
+#txt2 {
+    width: 100%;
+    text-align: center;
+}
+
+#txt1 {
+    font-size: large;
+}
+
+#d1 {
+    width: 100%;
 }
 
 .sp {
-    display: inline-flex;
-    width: 50px;
-    height: 50px;
-    margin: 10px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    color: white;
     font-size: x-large;
-    font-weight: bold;
 }
 
-#plus {
-    color: black;
-}
-
-#sp0 {
-    background-color: #F1433F;
-}
-
-#sp1 {
-    background-color: #F7E967;
-}
-
-#sp2 {
-    background-color: #A9CF54;
-}
-
-#sp3 {
-    background-color: #70B7BA;
-}
-
-#sp4 {
-    background-color: #3D4C53;
+.sp:hover {
+    cursor: pointer;
 }

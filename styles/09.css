@@ -1,68 +1,58 @@
+/* 헤더 스타일 */
 header {
-    height: 10vh;
-    justify-content: space-between;
-    background-color: #A2AAAD;
-    color: white;
-}
-
-main {
-    margin-top: 50px;
-    background-color: white;
-    color: #A2AAAD;
-    flex-direction: column;
+    background-color: #f8f9fa;
+    padding: 20px;
     text-align: center;
 }
 
-section {
-    width: 80%;
-    padding: 20px;
-    border: 2px solid #A2AAAD;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
+/* 내비게이션 바 스타일 */
+nav ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-#secDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 10px;
+nav ul li {
+    display: inline;
+    margin: 0 10px;
 }
 
-.cmsg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+nav ul li a {
+    text-decoration: none;
+    color: #343a40;
 }
 
-.btC1 {
+/* 메인 섹션 스타일 */
+main {
     margin: 20px;
 }
 
-button {
-    background-color: #A2AAAD;
+/* 주사위 이미지 스타일 */
+#btDiv img,
+#btDiv2 img {
+    width: 100px;
+    height: 100px;
+}
+
+/* 버튼 스타일 */
+.cmsg button {
+    background-color: #007bff;
     color: white;
-    border: 2px solid #A2AAAD;
-    padding: 8px 16px;
+    border: none;
+    padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    transition-duration: 0.4s;
     cursor: pointer;
-
 }
 
-
-button:hover {
-    background-color: white;
-    color: #A2AAAD;
-}
-
-#txt {
-    height: 40px;
+/* 섹션 스타일 */
+#sec1,
+#sec2,
+#sec3 {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
