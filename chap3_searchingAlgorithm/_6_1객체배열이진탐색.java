@@ -13,27 +13,23 @@ class PhyscData implements Comparable<PhyscData> {
 		this.height = height;
 		this.vision = vision;
 	}
-	@Override
-	public boolean equals(Object obj) {
-	    if (this == obj)
-	        return true;
-	    if (obj == null || getClass() != obj.getClass())
-	        return false;
-	    PhyscData other = (PhyscData) obj;
-	    return height == other.height && name.equals(other.name) && Double.compare(other.vision, vision) == 0;
-	}
 
 	@Override
 	public int compareTo(PhyscData o) {
 	    int nameCompare = this.name.compareTo(o.name);
-	    if (nameCompare != 0) return nameCompare;
-	    int heightCompare = this.height - o.height;
-	    if (heightCompare != 0) return heightCompare;
+	    if (nameCompare != 0) {
+	        return nameCompare;
+	    }
+
+	    int heightCompare = Integer.compare(this.height, o.height);
+	    if (heightCompare != 0) {
+
+	        return heightCompare;
+	    }
 	    return Double.compare(this.vision, o.vision);
 	}
-
 }
-
+	
 public class _6_1객체배열이진탐색 {
 
 	public static void main(String[] args) {
@@ -55,13 +51,14 @@ public class _6_1객체배열이진탐색 {
 
 		result = binarySearch(data, key);
 		System.out.println("\nbinarySearch(): result = " + result);
+
 		int idx = Arrays.binarySearch(data, key);
 		System.out.println("\nArrays.binarySearch(): result = " + result);
 	}
 
 	private static int linearSearch(PhyscData[] data, PhyscData key) {
 		for (int i = 0; i < data.length; i++)
-			if (data[i].equals(key))
+			if (data[i].compareTo(key)==0)
 				return i;
 		return -1;
 	}
@@ -71,7 +68,7 @@ public class _6_1객체배열이진탐색 {
 		int right = data.length - 1;
 		do {
 			int center = (left + right) / 2;
-			if (data[center].equals(key))
+			if (data[center].compareTo(key)==0)
 				return center;
 			else if (data[center].compareTo(key) < 0)
 				left = center + 1;

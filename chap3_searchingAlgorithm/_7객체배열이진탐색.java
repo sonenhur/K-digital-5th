@@ -1,14 +1,5 @@
 package chap3_searchingAlgorithm;
 
-//3장 객체 배열 정렬 - binary search
-/*
-* Comparator를 사용하는 방법
-* MyComparator implements Comparator<>
-* MyComparator myComparator = new MyComparator();
-* Arrays.sort(array, myComparator);
-* Collections.sort(list, myComparator);
-*/
-
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -39,18 +30,19 @@ class Fruit3 {
 
 class FruitNameComparator implements Comparator<Fruit3> {
 	public int compare(Fruit3 f1, Fruit3 f2) {
-		// 구현
+		return f1.getName().compareTo(f2.getName());
 	}
+}
 
 public class _7객체배열이진탐색 {
 	private static void sortData(Fruit3[] arr, Comparator<Fruit3> cc_price) {
-		//구현
+		Arrays.sort(arr, cc_price);
 	}
 	static void swap(Fruit3[]arr, int ind1, int ind2) {
 		Fruit3 temp = arr[ind1]; arr[ind1] = arr[ind2]; arr[ind2] = temp;
 	}
 	static void sortData(Fruit3 []arr, FruitNameComparator cc) {
-		//구현
+		Arrays.sort(arr, cc);
 	}
 	static void showData(Fruit3[]arr) {
 		System.out.println();
@@ -62,7 +54,20 @@ public class _7객체배열이진탐색 {
 
 	// 교재 111 페이지 참조하여 구현
 	static int binarySearch(Fruit3[]a, Fruit3 f, Comparator<Fruit3> cc) {
-		//구현
+		int left = 0;
+		int right = a.length - 1;
+		while (left <= right) {
+			int mid = (left + right) / 2;
+			int cmp = cc.compare(a[mid], f);
+			if (cmp < 0) {
+				left = mid + 1;
+			} else if (cmp > 0) {
+				right = mid - 1;
+			} else {
+				return mid;
+			}
+		}
+		return -1;
 	}
 
 	public static void main(String[] args) {
@@ -76,15 +81,14 @@ public class _7객체배열이진탐색 {
 		System.out.println("\n정렬전 객체 배열: ");
 		showData(arr);
 		FruitNameComparator cc = new FruitNameComparator();
-		//Arrays.sort(arr, cc);
-		//sortData(arr, cc);
-		//showData(arr);
-		/*
+		Arrays.sort(arr, cc);
+		sortData(arr, cc);
+		showData(arr);
+
 		Arrays.sort(arr, (a, b) -> a.getPrice() - b.getPrice()); // Fruit3에 compareTo()가 있어도 람다식 우선 적용
 		System.out.println("\n람다식 정렬(가격)후 객체 배열: ");
 		showData(arr);
-		*/
-		//*
+
 		Arrays.sort(arr, new Comparator<Fruit3>() {
 			@Override
 			public int compare(Fruit3 a1, Fruit3 a2) {
@@ -93,16 +97,18 @@ public class _7객체배열이진탐색 {
 		});
 		System.out.println("\ncomparator 정렬(이름)후 객체 배열: ");
 		showData(arr);
-		//*
+
 		Comparator<Fruit3> cc_name = new Comparator<Fruit3>() {// 익명클래스 사용
-
-			//구현
-
+			@Override
+			public int compare(Fruit3 a1, Fruit3 a2) {
+				return a1.getName().compareTo(a2.getName());
+			}
 		};
 		Comparator<Fruit3> cc_price = new Comparator<Fruit3>() {
-
-			//구현
-
+			@Override
+			public int compare(Fruit3 a1, Fruit3 a2) {
+				return a1.getPrice() - a2.getPrice();
+			}
 		};
 
 		Fruit3 newFruit3 = new Fruit3("체리", 500, "2023-5-18");
