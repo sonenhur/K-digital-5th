@@ -5,15 +5,15 @@ package chap3_searchingAlgorithm;
 import java.util.Arrays;
 import java.util.Random;
 
-public class _4정수배열이진탐색 {
-	
+public class 정수배열이진탐색 {
+
 	// 무작위 정수를 배열에 입력하는 메소드
 	private static void inputData(int[] data) {
 		Random rand = new Random();
-		for (int i=0; i<data.length;i++)
-			data[i]=rand.nextInt(100);
-		}
-	
+		for (int i = 0; i < data.length; i++)
+			data[i] = rand.nextInt(50);
+	}
+
 	// 배열의 데이터를 출력하는 메소드
 	private static void showData(int[] data) {
 		for (int d : data) {
@@ -21,7 +21,7 @@ public class _4정수배열이진탐색 {
 		}
 		System.out.println();
 	}
-	
+
 	// 배열의 데이터를 정렬하는 메소드
 	private static void sortData(int[] data) {
 		for (int i = 0; i < data.length; i++)
@@ -34,7 +34,7 @@ public class _4정수배열이진탐색 {
 				}
 			}
 	}
-	
+
 	// 이진 탐색 메소드
 	private static int binarySearch(int[] data, int key) {
 		int left = 0;
@@ -58,16 +58,17 @@ public class _4정수배열이진탐색 {
 		for (int i = 0; i < data.length; i++)
 			if (data[i] == key)
 				return i; // 키를 찾으면 인덱스 반환
-		return -1;	// 키를 찾지 못하면 -1 반환
+		return -1; // 키를 찾지 못하면 -1 반환
 	}
+
 	public static void main(String[] args) {
-		int []data = new int[10]; // 10개의 정수를 저장할 배열 생성
+		int[] data = new int[10]; // 10개의 정수를 저장할 배열 생성
 		inputData(data);
 		showData(data);
 		sortData(data);
 		System.out.println();
-		for (int num: data) { // 정렬된 배열 출력
-			System.out.print(num+" ");
+		for (int num : data) { // 정렬된 배열 출력
+			System.out.print(num + " ");
 		}
 		int key = 33; // 찾을 키 설정
 		int result = linearSearch(data, key); // 선형 탐색 실행
