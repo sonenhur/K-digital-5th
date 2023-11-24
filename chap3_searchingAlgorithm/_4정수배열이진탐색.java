@@ -5,7 +5,7 @@ package chap3_searchingAlgorithm;
 import java.util.Arrays;
 import java.util.Random;
 
-public class 정수배열이진탐색 {
+public class _4정수배열이진탐색 {
 
 	// 무작위 정수를 배열에 입력하는 메소드
 	private static void inputData(int[] data) {
