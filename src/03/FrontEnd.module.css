@@ -1,0 +1,31 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+article {
+    color: white;
+    background-color: #333;
+}
+
+article>div {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    padding: 16px;
+}
+
+.divimg {
+    width: 28%;
+    text-align: center;
+}
+
+article p {
+    width: 72%;
+}
+
+article img {
+    border-radius: 24%;
+}
