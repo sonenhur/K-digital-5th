@@ -68,7 +68,7 @@ public class _6_0스트링배열이진탐색 {
 		if (result < 0)
 			System.out.println("그 값의 요소가 없습니다");
 		else
-			System.out.println("'" + key + "'은(는) " + result + "번에 있습니다.");
+			System.out.println("'" + key + "'의 위치는 " + result + "(+1)번입니다.");
 
 		key = "배";
 		result = binarySearch(data, key); // 이진 탐색 수행
@@ -76,13 +76,13 @@ public class _6_0스트링배열이진탐색 {
 		if (result < 0)
 			System.out.println("그 값의 요소가 없습니다");
 		else
-			System.out.println("'" + key + "'은(는) " + result + "번에 있습니다.");
+			System.out.println("'" + key + "'의 위치는 " + result + "(+1)번입니다.");
 
 		int idx = Arrays.binarySearch(data, key); // Java 라이브러리를 사용한 이진 탐색
 		System.out.println("\nArrays.binarySearch(): result = " + idx); // 결과 출력
 		if (idx < 0)
 			System.out.println("그 값의 요소가 없습니다");
 		else
-			System.out.println("'" + key + "'은(는) " + idx + "번에 있습니다.");
+			System.out.println("'" + key + "'의 위치는 " + result + "(+1)번입니다.");
 	}
 }
