@@ -1,8 +1,5 @@
 package chap2_dataStructure;
 
-import java.util.Arrays;
-import java.util.Comparator;
-
 class PhyscData2 implements Comparable<PhyscData2> {
 	String name;
 	int height;
