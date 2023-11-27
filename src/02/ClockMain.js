@@ -1,7 +1,7 @@
 import LogoImg from "../01/LogoImg";
 import { useState } from "react";
 
-function ClockMain() {
+function ClockMain() {      //State변수를 이용해서 Re렌더링
     const [ctime, setCtime] = useState(new Date().toLocaleTimeString());
 
     setInterval(() => {

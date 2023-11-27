@@ -1,0 +1,49 @@
+.m {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f1f1f1;
+}
+
+.sec {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.fm {
+    display: flex;
+    flex-direction: column;
+}
+
+.fdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.div1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.bt {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007AFF;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bt:hover {
+    background-color: #0051cb;
+}
