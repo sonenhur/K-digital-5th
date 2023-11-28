@@ -1,46 +1,58 @@
-import style from './Lotto.module.css'
-import { useState } from 'react'
-export default function Lotto() {
-    const [tags, setTags] = useState();
-    const handleClick = (e) => {
-        e.preventDefault()
-        let arr = [];
-        while (arr.length < 7) { //로또 배열 생성
-            let n = Math.floor(Math.random() * 45) + 1; //1~45
-            if (!arr.includes(n)) arr.push(n);
-        }
-        let tempTags;
-        tempTags = arr.map((item, idx) =>
-            idx == 5 ?
-                <>
-                    <span className='sp' id={`sp${Math.floor(parseInt(item) / 10)}`}>
-                        {item}
-                    </span >
-                    <span id='plus' className='sp' > + </span>
-                </>
-                : <span className='sp' id={`sp${Math.floor(parseInt(item) / 10)}`} >
-                    {item}
-                </span >
+import style from './Lotto.module.css';
+import { useState, useEffect } from 'react';
 
+export default function Lotto() {
+    // let tags = "Lotto번호 생성기"
+    const [tags, setTags] = useState();
+
+    const handleClick = (n) => {
+        // tags = Math.floor(Math.random()*45) + 1 ;
+        let lottoNum = [];
+        while (lottoNum.length < 7) {
+            let n = Math.floor(Math.random() * 45) + 1
+            if (!lottoNum.includes(n)) lottoNum.push(n);
+        }
+
+        // + 추가
+        lottoNum.splice(6, 0, "+");
+        //        setTags()
+
+        // 전통적으로 array에는 동일한 데이터타입만 저장
+        // 데이터타입이 다른 요소를 묶을때는 list로
+
+        let tempTags = lottoNum.map((item, idx) =>
+            (item === '+')
+                ? <span key={`sp${idx}`} className={style.spp}>
+                    {item}
+                </span>
+                : <span key={`sp${idx}`} className={style[`sp${Math.floor(item / 10)}`]}>
+                    {item}
+                </span>
         )
+
+        //console.log(tempTags);
         setTags(tempTags);
-    }
+    };
+
+    useEffect(() => {
+        setTags("Lotto번호 생성기");
+    }, []);
+
+    useEffect(() => {
+        //console.log(tags)
+    }, [tags]);
+
     return (
-        <main className={style.m}>
-            <section className={style.sec}>
-                <form className={style.fm}>
-                    <div className={style.fdiv}>
-                        <div className={style.div1} id='d1'>
-                            {tags}
-                        </div>
-                    </div>
-                    <div className={style.fdiv}>
-                        <div className={style.div1} id='d2'>
-                            <button className={style.bt} onClick={handleClick}>로또번호생성</button>
-                        </div>
-                    </div>
-                </form >
-            </section >
-        </main>
+        <div className={style.divLotto}>
+            <div className={style.d1}>
+                <p className={style.divp}>
+                    {tags}
+                </p>
+            </div>
+            <div>
+                <button className={style.bt} onClick={handleClick}>Lotto번호생성</button>
+            </div>
+
+        </div>
     )
 }
