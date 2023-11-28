@@ -58,8 +58,4 @@ public class 객체배열정렬 {
 		sortData(data); // 데이터 정렬
 		showData(data); // 정렬된 데이터 출력
 	}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 61991ad2657048d355db4a54d8c8044d4300c6af
