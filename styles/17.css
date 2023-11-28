@@ -1,128 +1,96 @@
-/* container.css */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-main {
-    width: 80%;
-    margin: 0 auto;
-    border: 1px solid #007bff6f;
-    border-radius: 10px;
-    background-color: #fff;
-}
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #007bff6f;
-}
-
-h1 {
-    color: #007AFF;
-    font-weight: bold;
-}
-
-nav {
-    display: flex;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: #007AFF;
-    text-decoration: none;
-}
-
-section {
-    padding: 20px;
-}
-
-section h1 {
-    margin-bottom: 10px;
-}
-
 form {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
 .fdiv {
-    width: 80%;
-    border: 1px solid #007bff6f;
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="date"] {
     width: 100%;
-    height: 30px;
-    border: 1px solid #007bff6f;
-    border-radius: 5px;
-    padding: 5px;
+}
+
+#d0 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+}
+
+.inDiv,
+fieldset {
+    width: 45%;
 }
 
 fieldset {
+    width: 40%;
+}
+
+.inDiv {
+    padding-top: 10px;
+    width: 40%;
+}
+
+.inDiv2 {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #007bff6f;
-    border-radius: 10px;
     padding: 10px;
+    width: 20%;
 }
 
-legend {
-    color: #007AFF;
-    font-weight: bold;
+#bt {
+    display: inline-flex;
+    margin-top: 15px;
+    width: 80%;
 }
 
-input[type="radio"] {
-    margin-right: 5px;
-}
-
-button {
-    width: 100px;
-    height: 40px;
-    border: none;
-    border-radius: 10px;
-    background-color: #007AFF;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
+fieldset {
+    text-align: center;
+    padding: 10px;
 }
 
 table {
     width: 100%;
+}
+
+table,
+th,
+td {
+    border: 1px solid gainsboro;
     border-collapse: collapse;
 }
 
 th,
-td {
-    border: 1px solid #007bff6f;
-    padding: 10px;
-    text-align: center;
+tr {
+    height: 30px;
 }
 
 th {
-    background-color: #007bff6f;
-    color: #007AFF;
+    background-color: gray;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: gainsboro;
+}
+
+.sp1 {
+    text-align: center;
+}
+
+.sp2 {
+    text-align: left;
+}
+
+.sp3 {
+    text-align: right;
+}
+
+input[type=date] {
+    display: inline-flex;
+    height: 40px;
+    width: 200px;
+    font-size: large;
     font-weight: bold;
 }
