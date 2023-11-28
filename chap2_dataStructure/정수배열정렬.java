@@ -16,10 +16,14 @@ public class 정수배열정렬 {
 		for (int i = 0; i < arr.length - 1; i++) {
 			for (int j = i + 1; j < arr.length; j++) {
 				if (arr[i] > arr[j]) {
+<<<<<<< HEAD
 					swap(arr, i, j); // swap(a,x,y)
 									// a = 스왑을 수행할 배열 이름
 									// x = 스왑을 수행할 배열의 첫 자리
 									// y = 스왑을 수행할 배열의 끝 자리
+=======
+					swap(arr, i, j);
+>>>>>>> 61991ad2657048d355db4a54d8c8044d4300c6af
 				}
 			}
 		}
@@ -67,4 +71,8 @@ public class 정수배열정렬 {
 			System.out.print(num + " ");
 		}
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 61991ad2657048d355db4a54d8c8044d4300c6af
