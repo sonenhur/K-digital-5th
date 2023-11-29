@@ -121,39 +121,39 @@ public class _4_4정수선형큐리스트 {
 			System.out.print("(1)인큐　(2)디큐　(3)피크　(4)덤프　(0)종료: ");
 			int menu = stdIn.nextInt();
 			switch (menu) {
-			case 1: // 인큐
-				rndx = random.nextInt(20);
-				System.out.print("입력데이터: (" + rndx + ")");
-				try {
-					oq.enque(rndx);
-				} catch (Queue4.OverflowQueueException e) {
-					System.out.println("큐가 가득차있습니다.");
-				}
-				break;
+				case 1: // 인큐
+					rndx = random.nextInt(20);
+					System.out.print("입력데이터: (" + rndx + ")");
+					try {
+						oq.enque(rndx);
+					} catch (Queue4.OverflowQueueException e) {
+						System.out.println("큐가 가득차있습니다.");
+					}
+					break;
 
-			case 2: // 디큐
-				try {
-					p = oq.deque();
-					System.out.println("디큐한 데이터는 " + p + "입니다.");
-				} catch (Queue4.EmptyQueueException e) {
-					System.out.println("큐가 비어 있습니다.");
-				}
-				break;
+				case 2: // 디큐
+					try {
+						p = oq.deque();
+						System.out.println("디큐한 데이터는 " + p + "입니다.");
+					} catch (Queue4.EmptyQueueException e) {
+						System.out.println("큐가 비어 있습니다.");
+					}
+					break;
 
-			case 3: // 피크
-				try {
-					p = oq.peek();
-					System.out.println("피크한 데이터는 " + p + "입니다.");
-				} catch (Queue4.EmptyQueueException e) {
-					System.out.println("큐가 비어 있습니다.");
-				}
-				break;
+				case 3: // 피크
+					try {
+						p = oq.peek();
+						System.out.println("피크한 데이터는 " + p + "입니다.");
+					} catch (Queue4.EmptyQueueException e) {
+						System.out.println("큐가 비어 있습니다.");
+					}
+					break;
 
-			case 4: // 덤프
-				oq.dump();
-				break;
-			default:
-				break;
+				case 4: // 덤프
+					oq.dump();
+					break;
+				default:
+					break;
 			}
 		}
 	}

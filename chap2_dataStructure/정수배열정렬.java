@@ -64,4 +64,4 @@ public class 정수배열정렬 {
             System.out.print(num + " ");
         }
     }
-}>>>>>>>61991 ad2657048d355db4a54d8c8044d4300c6af
+}

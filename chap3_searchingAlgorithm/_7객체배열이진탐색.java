@@ -84,8 +84,8 @@ public class _7객체배열이진탐색 {
 				new Fruit3("바나나", 50, "2023-5-18"),
 				new Fruit3("수박", 880, "2023-5-28"),
 				new Fruit3("체리", 10, "2023-9-8")
-				};
-		
+		};
+
 		System.out.println("\n정렬전 객체 배열: ");
 		showData(arr); // 데이터 출력
 		FruitNameComparator cc = new FruitNameComparator();

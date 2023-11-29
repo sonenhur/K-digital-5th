@@ -39,8 +39,8 @@ public class _8객체비교연산자 {
 				new PhyscData4("길동", 182, 0.6),
 				new PhyscData4("길동", 167, 0.2),
 				new PhyscData4("길동", 167, 0.5),
-				};
-		
+		};
+
 		showData(data); // 데이터 출력
 		Arrays.sort(data, HEIGHT_ORDER); // 키 순서로 정렬
 		showData(data); // 정렬된 데이터 출력
