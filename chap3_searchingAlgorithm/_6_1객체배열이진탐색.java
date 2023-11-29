@@ -86,8 +86,8 @@ public class _6_1객체배열이진탐색 {
 				new PhyscData("길동", 182, 0.6),
 				new PhyscData("길동", 167, 0.2),
 				new PhyscData("길동", 167, 0.5),
-				};
-		
+		};
+
 		showData(data);
 		sortData(data);
 		showData(data);

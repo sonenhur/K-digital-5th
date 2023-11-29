@@ -22,20 +22,20 @@ public class _4정수배열이진탐색 {
         System.out.println();
     }
 
-	// 배열의 데이터를 정렬하는 메소드
-	private static void sortData(int[] data) {
-		for (int i = 0; i < data.length; i++)
-			for (int j = i + 1; j < data.length; j++) {
-				if (data[i] > data[j]) {
-					int temp;
-					temp = data[i];
-					data[i] = data[j];
-					data[j] = temp;
-				}
-			}
-	}
+    // 배열의 데이터를 정렬하는 메소드
+    private static void sortData(int[] data) {
+        for (int i = 0; i < data.length; i++)
+            for (int j = i + 1; j < data.length; j++) {
+                if (data[i] > data[j]) {
+                    int temp;
+                    temp = data[i];
+                    data[i] = data[j];
+                    data[j] = temp;
+                }
+            }
+    }
 
-	// 이진 탐색 메소드
+    // 이진 탐색 메소드
     private static int binarySearch(int[] data, int key) {
         int left = 0;
         int right = data.length - 1;
