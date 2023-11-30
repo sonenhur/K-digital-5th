@@ -74,14 +74,15 @@ class objectQueue2 {
 
 	// 큐에 데이터를 인큐
 	public int enque(Point3 x) throws OverflowQueueException {
-		if (num >= capacity)
-			throw new OverflowQueueException();
-		que[rear++] = x;
-		num++;
-		if (rear == capacity)
-			rear = 0;
-		return num;
+	    if (num == capacity) // Fixed the condition here
+	        throw new OverflowQueueException();
+	    que[rear++] = x;
+	    num++;
+	    if (rear == capacity)
+	        rear = 0;
+	    return num;
 	}
+
 
 	// 큐에서 데이터를 디큐
 	public Point3 deque() throws EmptyQueueException {
@@ -146,7 +147,6 @@ class objectQueue2 {
 	}
 }
 
-// 메인 클래스: 객체 선형 큐를 테스트하는 프로그램
 public class _4_4객체선형큐배열 {
 	public static void main(String[] args) {
 		Scanner stdIn = new Scanner(System.in);
@@ -168,7 +168,7 @@ public class _4_4객체선형큐배열 {
 					try {
 						oq.enque(p);
 					} catch (objectQueue2.OverflowQueueException e) {
-						System.out.println("큐가 가득찼있습니다.");
+						System.out.println("큐가 가득차있습니다.");
 					}
 					break;
 
