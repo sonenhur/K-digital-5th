@@ -1,4 +1,4 @@
-# CHAP4 Stack and Queue 개념 보충
+## CHAP4 Stack and Queue 개념 보충
 
 ### 스택:  
 ##### 후입선출(LastInFirstOut)  
