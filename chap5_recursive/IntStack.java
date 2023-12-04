@@ -1,3 +1,5 @@
+package chap5_recursive;
+
 // int형 고정 길이 스택
 
 public class IntStack {

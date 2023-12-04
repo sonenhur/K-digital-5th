@@ -1,3 +1,5 @@
+package chap5_recursive;
+
 // 각 행과 열에 퀸 1개를 배치하는 조합을 재귀적으로 나열
 
 class QueenBB {
