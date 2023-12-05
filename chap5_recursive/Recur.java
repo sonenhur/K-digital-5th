@@ -15,7 +15,7 @@ class Recur {
 	}
 // 								recur(3)			  sysout(4) 			recur(2)
 // 						recur(2) sysout(3) recur(1) 	 ||			recur(1) sysout(2) recur(0)
-// 			recur(1) sysout(2) recur(0)	(r0sys1r-1)	 	 ||	recur(0) sysout(1) recur(-1)
+// 			recur(1) sysout(2) recur(0)	 (r0sys1r-1)	 ||	recur(0) sysout(1) recur(-1)
 // recur(0) sysout(1) recur(-1)					
 //												***recur(0)과 recur(-1)에서는 아무 일도 일어나지 않음***
 	

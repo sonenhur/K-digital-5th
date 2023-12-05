@@ -1,4 +1,3 @@
-
 package chap5_recursive;
 //https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/?ref=lbp
 //N Queen problem / backtracking
