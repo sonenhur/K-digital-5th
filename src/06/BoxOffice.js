@@ -1,22 +1,38 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import TailH1 from "../UI/TailH1";
-import { BiCameraMovie } from "react-icons/bi";
+import { RiMovie2Line } from "react-icons/ri";
 
 export default function BoxOffice() {
     const [trs, setTrs] = useState([]);
     const [boxlist, setBoxlist] = useState([]);
+    const [yesterday, setYesterday] = useState("");
+    const rfDate = useRef();
 
-    useEffect(() => {
+    const getFetchData = (selDate) => {
         let apikey = process.env.REACT_APP_BOXOFFICE;
         let url =
             "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?";
         url = url + `key=${apikey}`;
-        url = url + `&targetDt=20231129`;
+        url = url + `&targetDt=${selDate}`;
         console.log(url);
         fetch(url)
             .then((resp) => resp.json())
             .then((data) => setBoxlist(data.boxOfficeResult.dailyBoxOfficeList))
             .catch((err) => console.log(err));
+    }
+
+    //날짜 변경시 호출
+    const handleChange = () => {
+        getFetchData(rfDate.current.value.replaceAll('-', ''))
+    }
+
+    useEffect(() => {
+        let tmYesterday = new Date();
+        tmYesterday.setDate(tmYesterday.getDate() - 1);
+        tmYesterday = tmYesterday.toISOString().slice(0, 10);
+        setYesterday(tmYesterday)
+        console.log(tmYesterday)
+        getFetchData(tmYesterday.replaceAll('-', ''))
     }, []);
 
     // boxlist 변경 시 실행
@@ -59,9 +75,18 @@ export default function BoxOffice() {
         <div className="container mx-auto bg-white h-screen">
             <div className="flex flex-col justify-center items-center w-full h-full">
                 <div className="flex m-8">
-                    <BiCameraMovie className="text-4xl text-gray-700 mr-2" />
+                    <RiMovie2Line className="text-4xl text-gray-700 mr-2" />
                     <TailH1 title="박스오피스" />
                 </div>
+                <label htmlFor="dt">날짜 선택</label>
+                <input
+                    type='date'
+                    id='dt'
+                    max={yesterday}
+                    ref={rfDate}
+                    onChange={handleChange}
+                    className="bg-gray-100 mb-3"
+                />
                 <div className="relative overflow-x-auto w-3/4 shadow-md sm:rounded-lg">
                     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead className="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400">
