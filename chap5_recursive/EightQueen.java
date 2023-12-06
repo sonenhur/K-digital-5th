@@ -12,6 +12,7 @@ class EightQueen {
     static void print() {
         for (int i = 0; i < 8; i++)
             System.out.printf("%2d", pos[i]);
+        // %2d는 최소 2자리로 정수를 출력하도록 형식을 지정하는데 사용함
         System.out.println();
     }
 

@@ -149,7 +149,7 @@ public class MazeProblem2023 {
 			int i = tmp.x;
 			int j = tmp.y;
 			int d = tmp.dir;
-			mark[i][j] = 1; // 백트래킹 궤적은 1로 표시
+			mark[i][j] = 0; // 백트래킹 궤적은 1로 표시
 
 			while (d < 8) { // 이동 방향이 8방향인 동안 전진
 				int g = i + moves[d].a;  
@@ -157,6 +157,8 @@ public class MazeProblem2023 {
 
 				if ((g == ix) && (h == iy)) { // 출구에 도착한 경우
 					// 경로 출력
+					mark[i][j] = 1;
+//					mark[ix][iy] = 1;
 					System.out.println("길을 찾았습니다:");
 					st.dump();
 					return;
@@ -228,8 +230,8 @@ public class MazeProblem2023 {
 		System.out.println("mark::");
 		showMatrix(mark, 13, 16);
 
-		path(maze, mark, 12, 15);
+		path(maze, mark, 13, 16);
 		System.out.println("미로 찾은 후 mark::");
-		showMatrix(mark, 12, 15);
+		showMatrix(mark, 13, 16);
 	}
 }

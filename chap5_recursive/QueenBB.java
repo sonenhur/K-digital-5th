@@ -2,7 +2,7 @@ package chap5_recursive;
 
 // 각 행과 열에 퀸 1개를 배치하는 조합을 재귀적으로 나열
 
-class QueenBB {
+class QueenBB {		//flag는 상태를 기록하고 처리 흐름을 제어하기 위한 boolean 변수 
     static boolean[] flag = new boolean[8];        // 각 행에 퀸이 이미 배치되었는가?
     static int[] pos = new int[8];                 // 각 열의 퀸의 위치
 
