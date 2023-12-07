@@ -59,6 +59,7 @@ class StackList {
 			data = new ArrayList<>(0); // 스택 본체용 배열을 생성
 		} catch (OutOfMemoryError e) { // 생성할 수 없음
 			capacity = 0;
+
 		}
 	}
 
@@ -190,7 +191,7 @@ public class MazeProblem2023 {
 		int[][] maze = new int[14][17];
 		int[][] mark = new int[14][17];
 
-		int input[][] = { // 12 x 15
+		int[][] input = { // 12 x 15
 				{ 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1 }, 
 				{ 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1 },
 				{ 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1 },
