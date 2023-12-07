@@ -18,6 +18,7 @@ class Stack3 {
         array[++top] = p;
     }
 
+
     public Point pop() {
         return array[top--];
     }
@@ -46,7 +47,9 @@ public class Backtracking_Queen2023 {
         d[ix][iy] = 1; // 현 위치에 퀸을 넣었다는 표시를 하고
         count++;
         st.push(p);// 스택에 현 위치 객체를 push
+        ix++;
         while (true) {
+        	System.out.println(ix+" "+iy);
             if (st.isEmpty() && ix == 8)  // ix가 8이면 8개 배치 완료, stack이 empty가 아니면 다른 해를 구한다
                 break;
             if ((iy = nextMove(d, ix, iy)) == -1) {// 다음 이동할 열을 iy로 주는데 -1이면 더이상 이동할 열이 없음을 나타냄
@@ -58,13 +61,15 @@ public class Backtracking_Queen2023 {
                     count--; // 퀸 배치 갯수 감소
                     d[prevPoint.x][prevPoint.y] = 0; // Backtrack: 이전에 퀸을 놓았던 위치를 0으로 되돌림
                 }
-            }
+            }else {
 
             p = new Point(ix, iy);
             d[ix][iy] = 1;
             count++;
             st.push(p);
-
+            ix++;
+            iy=0;
+            
         }
 
         if (count == 8) { // 8개를 모두 배치하면
@@ -74,6 +79,7 @@ public class Backtracking_Queen2023 {
             count--; // 퀸 배치 갯수 감소
             d[prevPoint.x][prevPoint.y] = 0; // Backtrack: 이전에 퀸을 놓았던 위치를 0으로 되돌림
         } //현재 상태를 출력하고 이전 단계로 돌아가서 다른 방법도 추가로 탐색함. (가능한 모든 해를 찾아내기 위해)
+    }
     }
 
 
