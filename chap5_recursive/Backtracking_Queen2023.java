@@ -48,7 +48,7 @@ class Stack3 {
 			for (int i = 0; i <= stack.getTop(); i++) {
 				System.out.println("[" + stack.getArray()[i].x + ", " + stack.getArray()[i].y + "]");
 			}
-			System.out.println();
+			System.out.println("");
 		}
 	}
 }
@@ -78,7 +78,7 @@ public class Backtracking_Queen2023 {
 		ix++;
 		int total = 0;
 		while (true) {
-			if (ix == 8) {
+			if (count == 8) {
 				// 8개의 퀸을 성공적으로 배치한 경우
 				total++;
 				System.out.println("Case " + total + ":");
