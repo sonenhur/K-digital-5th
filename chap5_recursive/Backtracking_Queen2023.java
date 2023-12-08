@@ -39,6 +39,8 @@ class Stack3 {
     public Point[] getArray() {
         return array;
     }
+    
+    // 스택의 내용을 출력
     public static void dumpStack(Stack3 stack) {
         for (int i = 0; i <= stack.getTop(); i++) {
             System.out.println("[" + stack.getArray()[i].x + ", " + stack.getArray()[i].y + "]");
