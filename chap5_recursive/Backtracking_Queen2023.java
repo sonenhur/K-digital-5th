@@ -39,6 +39,12 @@ class Stack3 {
     public Point[] getArray() {
         return array;
     }
+    public static void dumpStack(Stack3 stack) {
+        for (int i = 0; i <= stack.getTop(); i++) {
+            System.out.println("[" + stack.getArray()[i].x + ", " + stack.getArray()[i].y + "]");
+        }
+        System.out.println();
+    }
 }
 
 // x 및 y 좌표를 가지는 포인트를 나타내는 클래스
@@ -64,28 +70,32 @@ public class Backtracking_Queen2023 {
         count++;
         st.push(p); // 현재 위치를 스택에 푸시
         ix++;
-
+        int total=0;
         while (true) {
-            if (st.isEmpty()) {
-                // 스택이 비어있으면 모든 가능성을 탐색했으므로 종료
-                break;
-            }
             if (ix == 8) {
                 // 8개의 퀸을 성공적으로 배치한 경우
+            	total++;
+            	System.out.println("Case "+total+":");
                 showQueens(d);
                 Point prevPoint = st.pop();
                 ix--; // 이전 행으로 이동
                 count--; // 퀸 수 감소
                 d[prevPoint.x][prevPoint.y] = 0; // 퀸 제거
                 iy = prevPoint.y + 1; // 이전 행의 다음 열로 이동
-            } else if ((iy = nextMove(d, ix, iy)) == -1) {
+            }
+            else if ((iy = nextMove(d, ix, iy)) == -1) {
+            	if (st.isEmpty()) {
+                    // 스택이 비어있으면 모든 가능성을 탐색했으므로 종료
+                    break;
+                }
                 // 현재 행에서 더 이상 유효한 이동이 없는 경우
                 Point prevPoint = st.pop();
                 ix--; // 이전 행으로 이동
                 count--; // 퀸 수 감소
                 d[prevPoint.x][prevPoint.y] = 0; // 퀸 제거
                 iy = prevPoint.y + 1; // 이전 행의 다음 열로 이동
-            } else {
+            }
+            else {
                 // 유효한 이동이 있는 경우 퀸 배치
                 p = new Point(ix, iy);
                 d[ix][iy] = 1;
@@ -188,7 +198,7 @@ public class Backtracking_Queen2023 {
 
     // 다음 이동 가능한 열을 반환, 이동할 열이 없으면 -1 반환
     public static int nextMove(int[][] d, int row, int col) {
-        for (int nextCol = col + 1; nextCol < d.length; nextCol++) {
+        for (int nextCol = col; nextCol < d.length; nextCol++) {
             if (checkMove(d, row, nextCol)) {
                 return nextCol; // 다음 열로 이동 가능한 경우 해당 열 반환
             }
