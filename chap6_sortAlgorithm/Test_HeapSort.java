@@ -1,3 +1,4 @@
+/*
 package chap6_sortAlgorithm;
 
 import java.util.Random;
@@ -88,4 +89,4 @@ public class Test_HeapSort {
             }
         } while (select < 5);
     }
-}
+}*/
