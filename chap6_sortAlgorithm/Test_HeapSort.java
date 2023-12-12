@@ -4,9 +4,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 interface MaxHeap {
-    public void Insert(int x);
-
-    public int DeleteMax();
+	public void Insert(int x);
+	public int DeleteMax();
 }
 
 class Heap implements MaxHeap {
@@ -16,23 +15,28 @@ class Heap implements MaxHeap {
     private int MaxSize; // Maximum allowable size of MaxHeap
 
     public Heap(int sz) {
-
+        MaxSize = sz;
+        n = 0;
+        heap = new int[MaxSize + 1];
     }
 
-    public void display() {
+	public void display() {
+		 System.out.print("MaxHeap:: (i, heap[i]): ");
+	        for (int i = 1; i <= n; i++) {
+	            System.out.print("(" + i + ", " + heap[i] + ") ");
+	        }
+	        System.out.println();
+	    }
+	
+	@Override
+	public void Insert(int x) {
 
-    }
 
-    @Override
-    public void Insert(int x) {
+	}
+	@Override
+	public int DeleteMax() {
 
-
-    }
-
-    @Override
-    public int DeleteMax() {
-
-    }
+	}
 
     private void HeapEmpty() {
         System.out.println("Heap Empty");
@@ -49,7 +53,7 @@ public class Test_HeapSort {
             System.out.print(d[i] + " ");
         System.out.println();
     }
-
+    
     public static void main(String[] args) {
         Random rnd = new Random();
         int select = 0;
@@ -64,21 +68,24 @@ public class Test_HeapSort {
             select = stdIn.nextInt();
             switch (select) {
                 case 1:
-
+                    System.out.print("input value: ");
+                    int data = stdIn.nextInt();
+                    heap.Insert(data);
+                    heap.display();
                     break;
                 case 2:
                     heap.display();
                     break;
                 case 3:
-
+                    for (int i = count; i >= 1; i--) {
+                        sorted[i - 1] = heap.DeleteMax();
+                    }
+                    System.out.println("Sorted Array:");
+                    showData(sorted);
                     break;
-
                 case 4:
                     return;
-
             }
         } while (select < 5);
-
-        return;
     }
 }

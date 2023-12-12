@@ -1,3 +1,4 @@
+/*
 package chap4_StackAndQueue;
 
 // 신체검사 데이터 배열에서 이진 검색
@@ -63,4 +64,4 @@ class PhysExamSearch {
             System.out.println("찾은 데이터: " + x[idx]);
         }
     }
-}
+}*/
