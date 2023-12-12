@@ -1,3 +1,6 @@
+/*
+import java.util.Scanner;
+
 public static void main(String[] args) {
 
     class BubbleSort {
@@ -7,7 +10,7 @@ public static void main(String[] args) {
             a[idx2] = t;
         }
 
-        static void bubbleSort(int[], int n) {
+        static void bubbleSort(int[] a, int n) {
             for (int i = 0; i < n - 1; i++) {
                 for (int j = n - 1; j > i; j--) {
                     if (a[j - 1] > a[j])
@@ -37,4 +40,4 @@ public static void main(String[] args) {
             }
         }
     }
-}
+}*/

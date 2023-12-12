@@ -1,3 +1,4 @@
+/*
 package chap5_recursive;
 
 //https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/?ref=lbp
@@ -235,3 +236,4 @@ public class Backtracking_Queen2023 {
 		solveQueen(data);
 	}
 }
+*/

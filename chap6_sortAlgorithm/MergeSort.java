@@ -1,5 +1,7 @@
 package chap6_sortAlgorithm;
 
+import static java.lang.System.arraycopy;
+
 public class MergeSort {
 	static int[] buff; // 작업용 배열 선언
 
@@ -23,8 +25,8 @@ public class MergeSort {
 		}
 
 		// 병합된 결과를 원래 배열 a에 복사
-		for (int m = left1; m <= right2; m++) {
-			a[m] = buff[m - left1];
+		if (right2 + 1 - left1 >= 0) {
+			arraycopy(buff, 0, a, left1, right2 + 1 - left1);
 		}
 	}
 
@@ -57,7 +59,7 @@ public class MergeSort {
 	public static void main(String[] args) {
 		// 정렬할 배열 선언 및 초기화
 		int[] a = { 2, 4, 6, 8, 11, 13, 1, 2, 3, 4, 9, 16, 21 };
-		
+
 		// 배열을 병합 정렬
 		mergeSort(a, a.length);
 
