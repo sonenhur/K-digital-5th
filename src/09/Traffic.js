@@ -2,12 +2,11 @@ import React, { useState, useEffect } from 'react';
 import TailH1 from '../UI/TailH1';
 import TrafficNav from './TrafficNav';
 
-
 export default function Traffic() {
     // 상태변수
-    const [tdata, setTdata] = useState([]); // 전체 데이터
-    const [c1, setC1] = useState([]);       // 대분류
-    const [c2, setC2] = useState([]);       // 중분류
+    const [tdata, setTdata] = useState(); // 전체 데이터
+    const [c1, setC1] = useState();       // 대분류
+    const [c2, setC2] = useState();       // 중분류
     const [selC1, setSelC1] = useState();   // 선택된 대분류
     const [selC2, setSelC2] = useState();   // 선택된 중분류
     const [detail, setDetail] = useState(); // 상세 정보
