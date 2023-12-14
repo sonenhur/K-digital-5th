@@ -72,8 +72,7 @@ export default function Traffic() {
         if (tdata === undefined) return;
 
         // 상세정보 출력하기
-        let tm = tdata.filter((item) => item.사고유형_대분류 === selC1
-            && item.사고유형_중분류 === selC2);
+        let tm = tdata.filter((item) => item.사고유형_대분류 === selC1 && item.사고유형_중분류 === selC2);
         tm = tm[0];
         console.log(tm)
     }, [selC2])
@@ -82,9 +81,10 @@ export default function Traffic() {
         <div className='container mx-auto h-screen'>
             <div className='flex flex-col justify-normal items-center w-full h-full my-8'>
                 <TailH1 title={'도로교통공단_사고유형별 교통사고 통계'} />
-                <div className='w-5/6 my-10'>
+                <div className='w-4/5 my-10'>
                     {c1 && <TrafficNav title={'대분류'} carr={c1} sel={selC1} setSel={setSelC1} />}
                     {c2 && <TrafficNav title={'중분류'} carr={c2} sel={selC2} setSel={setSelC2} />}
+
                 </div>
             </div>
         </div>
