@@ -4,12 +4,13 @@ import TrafficNav from './TrafficNav';
 
 export default function Traffic() {
     // 상태변수
-    const [tdata, setTdata] = useState(); // 전체 데이터
-    const [c1, setC1] = useState();       // 대분류
-    const [c2, setC2] = useState();       // 중분류
+    const [tdata, setTdata] = useState();   // 전체 데이터
+    const [c1, setC1] = useState();         // 대분류
+    const [c2, setC2] = useState();         // 중분류
     const [selC1, setSelC1] = useState();   // 선택된 대분류
     const [selC2, setSelC2] = useState();   // 선택된 중분류
     const [detail, setDetail] = useState(); // 상세 정보
+    const detailKey = ['사고건수', '사망자수', '중상자수', '경상자수', '부상신고자수'] // 상세 정보 순서
 
     // 데이터 불러오기
     const getData = async () => {
@@ -71,10 +72,17 @@ export default function Traffic() {
         if (tdata === undefined) return;
 
         // 상세정보 출력하기
-        let tm = tdata.filter((item) => item.사고유형_대분류 === selC1 && item.사고유형_중분류 === selC2);
-        tm = tm[0];
-        console.log(tm)
-    }, [selC2])
+        let tm = tdata.find((item) => item.사고유형_대분류 === selC1 && item.사고유형_중분류 === selC2);
+        if (tm === undefined) return;
+
+        tm = detailKey.map((item, idx) => (
+            <div key={`d1${idx}`}>
+                <div >{item}</div>
+                <div>{tm[item]}</div>
+            </div>
+        ));
+        setDetail(tm);
+    }, [selC2]);
 
     return (
         <div className='container mx-auto h-screen'>
@@ -83,8 +91,15 @@ export default function Traffic() {
                 <div className='w-4/5 my-10'>
                     {c1 && <TrafficNav title={'대분류'} carr={c1} sel={selC1} setSel={setSelC1} />}
                     {c2 && <TrafficNav title={'중분류'} carr={c2} sel={selC2} setSel={setSelC2} />}
-
                 </div>
+                {detail && (
+                    <div className='my-4'>
+                        <h2 className='text-2xl font-bold mb-2 text-gray-800'>상세 정보</h2>
+                        <div className='grid grid-cols-5 gap-4 bg-gray-100 p-4 rounded-md shadow-md'>
+                            {detail}
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );
