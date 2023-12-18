@@ -1,4 +1,4 @@
-package chap4_StackAndQueue;
+package chap4_stackAndQueue;
 
 //선형 큐 구현
 import java.util.Scanner;
@@ -134,7 +134,7 @@ public class 정수선형큐리스트연습 {
 				System.out.print("입력데이터: (" + rndx + ")");
 				try {
 					oq.enque(rndx);
-				} catch (chap4_StackAndQueue.Queue5.OverflowQueueException e) {
+				} catch (chap4_stackAndQueue.Queue5.OverflowQueueException e) {
 					System.out.println("stack이 가득차있습니다.");
 				}
 				break;
@@ -143,7 +143,7 @@ public class 정수선형큐리스트연습 {
 				try {
 					p = oq.deque();
 					System.out.println("디큐한 데이터는 " + p + "입니다.");
-				} catch (chap4_StackAndQueue.Queue5.EmptyQueueException e) {
+				} catch (chap4_stackAndQueue.Queue5.EmptyQueueException e) {
 					System.out.println("큐가 비어 있습니다.");
 				}
 				break;
@@ -152,7 +152,7 @@ public class 정수선형큐리스트연습 {
 				try {
 					p = oq.peek();
 					System.out.println("피크한 데이터는 " + p + "입니다.");
-				} catch (chap4_StackAndQueue.Queue5.EmptyQueueException e) {
+				} catch (chap4_stackAndQueue.Queue5.EmptyQueueException e) {
 					System.out.println("큐가 비어 있습니다.");
 				}
 				break;

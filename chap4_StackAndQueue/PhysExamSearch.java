@@ -1,5 +1,5 @@
 /*
-package chap4_StackAndQueue;
+package chap4_stackAndQueue;
 
 // 신체검사 데이터 배열에서 이진 검색
 
@@ -65,3 +65,6 @@ class PhysExamSearch {
         }
     }
 }*/
+package chap4_stackAndQueue;
+
+

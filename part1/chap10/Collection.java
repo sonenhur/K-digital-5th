@@ -14,7 +14,7 @@ public class Collection {
 		int average = 0;
 
 		// 정수형 값을 담을 리스트 참조변수 생성
-		List<Integer> list = new ArrayList();
+		List<Integer> list = new ArrayList<Integer>();
 
 		// 리스트에 100개의 정수를 랜덤으로 저장
 		Random random = new Random();

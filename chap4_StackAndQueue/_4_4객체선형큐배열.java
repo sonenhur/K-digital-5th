@@ -1,4 +1,4 @@
-package chap4_StackAndQueue;
+package chap4_stackAndQueue;
 
 //List를 사용한 선형 큐 구현  - 큐는 배열 사용한다 
 import java.util.Random;

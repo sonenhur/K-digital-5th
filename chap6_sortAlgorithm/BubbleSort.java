@@ -1,7 +1,7 @@
-/*
+package chap6_sortAlgorithm;
+
 import java.util.Scanner;
 
-public static void main(String[] args) {
 
     class BubbleSort {
         static void swap(int[] a, int idx1, int idx2) {
@@ -20,24 +20,23 @@ public static void main(String[] args) {
         }
 
         public static void main(String[] args) {
-            Scanner stdIn = new Scanner(System.in);
+            try (Scanner stdIn = new Scanner(System.in)) {
+				System.out.println("버블 정렬(버전1)");
+				System.out.println("요솟수: ");
+				int nx = stdIn.nextInt();
+				int[] x = new int[nx];
 
-            System.out.println("버블 정렬(버전1)");
-            System.out.println("요솟수: ");
-            int nx = stdIn.nextInt();
-            int[] x = new int[nx];
+				for (int i = 0; i < nx; i++) {
+				    System.out.println("x[" + i + "]: ");
+				    x[i] = stdIn.nextInt();
+				}
 
-            for (int i = 0; i < nx; i++) {
-                System.out.println("x[" + i + "]: ");
-                x[i] = stdIn.nextInt();
-            }
+				bubbleSort(x, nx);
 
-            bubbleSort(x, nx);
-
-            System.out.println("오름차순 정렬");
-            for (int i = 0; i < nx; i++) {
-                System.out.println("x[" + i + "]=" + x[i]);
-            }
+				System.out.println("오름차순 정렬");
+				for (int i = 0; i < nx; i++) {
+				    System.out.println("x[" + i + "]=" + x[i]);
+				}
+			}
         }
     }
-}*/

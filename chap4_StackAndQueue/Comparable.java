@@ -1,4 +1,4 @@
-package chap4_StackAndQueue;
+package chap4_stackAndQueue;
 
 // 자연 정렬을 하려면 다음과 같은 패턴으로 클래스를 정의(예)
 class A implements Comparable<A> {

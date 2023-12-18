@@ -1,4 +1,4 @@
-package chap4_StackAndQueue;
+package chap4_stackAndQueue;
 
 /*
  * 원형 큐로서 큐에 Point 객체를 저장 - 교재 소스코드를 원형 큐가 되도록 수정하는 연습

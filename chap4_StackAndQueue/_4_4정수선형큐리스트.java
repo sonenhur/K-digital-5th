@@ -1,4 +1,4 @@
-package chap4_StackAndQueue;
+package chap4_stackAndQueue;
 
 //선형 큐 구현
 import java.util.ArrayList;
