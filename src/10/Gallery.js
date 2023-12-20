@@ -92,7 +92,7 @@ export default function Gallery() {
                             required
                         />
                         <TailButton caption='확 인' bcolor='teal' handleClick={(e) => handleGetData(e)} />
-                        <TailButton caption='취 소' bcolor='transparent' handleClick={(e) => handleResetData(e)} />
+                        <TailButton caption='취 소' bcolor='teal' color handleClick={(e) => handleResetData(e)} />
                     </div>
                 </form>
             </div>
