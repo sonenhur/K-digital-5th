@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function TailSelect({ opItem, handleChange }) {
     const ops = opItem.map((item, idx) =>
         <option key={`op${idx}`} value={item}>{item}</option>

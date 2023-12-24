@@ -1,43 +1,43 @@
 import React, { useEffect, useState, useRef } from 'react';
 import TailH1 from '../UI/TailH1';
-import TailSelect from '../UI/TailSelect';
-import TailButton from '../UI/TailButton';
 import TailCard from '../UI/TailCard';
-import { FcLandscape, FcNightLandscape } from "react-icons/fc";
+import { GiPartyPopper } from "react-icons/gi";
+import TailSelect from '../UI/TailSelect';
 
 export default function Festival() {
-    const selRef = useRef();
+    const kwInput = useRef();
     const [tdata, setTdata] = useState([]);
     const [gu, setGu] = useState([]);
-    const [ops, setOps] = useState([]);
-    const [selectedValue, setSelectedValue] = useState('');
-    const [tmData, setTmData] = useState([]); // Add this line to define the mapped data
+    const [tags, setTags] = useState([]);
+    const [seldata, setSelData] = useState([]);
 
     let apikey = process.env.REACT_APP_APIKEY;
 
-    const getData = async () => {
-        let url = `https://apis.data.go.kr/6260000/FestivalService/getFestivalKr`;
-        url = `${url}?serviceKey=${apikey}`
+    const handleChange = (e) => {
+        console.log(e.target.value);
+        let tm = tdata.filter(item => item.GUGUN_NM === e.target.value);
+        console.log(tm);
+        setSelData(tm);
+    }
+
+    const handleGetData = async () => {
+        let url = `https://apis.data.go.kr/6260000/FestivalService/getFestivalKr?`;
+        url = `${url}serviceKey=${apikey}`;
         url = `${url}&pageNo=1`;
         url = `${url}&numOfRows=40`;
         url = `${url}&resultType=json`;
 
+        console.log(url);
+
         const resp = await fetch(url);
         const data = await resp.json();
-        setTdata(data.getFestivalKr.item);
-        console.log(data.getFestivalKr.item);
-    }
 
-    const handleChange = (e) => {
-        console.log(e.target.value);
-        setSelectedValue(e.target.value);
-        let tm = tdata.filter(item => item.GUGUN_NM === e.target.value);
-        setTmData(tm); // Set the state for the mapped data
-        console.log(tm);
+        console.log(data);
+        setTdata(data.getFestivalKr.item);
     }
 
     useEffect(() => {
-        getData();
+        handleGetData();
     }, []);
 
     useEffect(() => {
@@ -45,44 +45,43 @@ export default function Festival() {
         tm = [...new Set(tm)].sort();
         setGu(tm);
     }, [tdata]);
+    
 
     useEffect(() => {
-        let tm = gu.map((item, idx) => <option key={`op${idx}`} value={item}>{item}</option>);
-        setOps(tm);
-    }, [gu]);
-
-    useEffect(() => {
-        let tm = tmData.map((item, idx) => (
+        let tm = seldata.map((item, idx) =>
             <TailCard key={`tc${idx}`}
                 imgSrc={item.MAIN_IMG_THUMB}
-                title={item.TITLE}
-                subtitle={item.TRFC_INFO}
+                title={item.MAIN_TITLE}
+                subtitle={item.SUBTITLE}
                 tags={item.USAGE_DAY_WEEK_AND_TIME}
             />
-        ));
-        // Use 'tm' as needed
-    }, [tmData]);
+        );
+        setTags(tm);
+    }, [seldata]);
 
     return (
-        <div className="container mx-auto h-screen">
-            <div className="flex flex-col items-center w-full my-8">
-                <div className="flex items-center">
-                    <FcLandscape className="text-5xl mx-4" />
-                    <TailH1 title={'부산지역 축제정보'} />
-                    <FcNightLandscape className="text-5xl mx-4" />
-                    <form name="kform" className="mt-10 my-8 w-4/5 flex justify-center items-center">
-                        <select ref={selRef} onChange={handleChange}>
-                            <option value=''>--선택--</option>
-                            {ops}
-                        </select>
-                    </form>
+        <div className="container mx-auto w-full h-screen">
+            <div className="flex flex-col justify-top items-center w-full my-8">
+                <div className='flex'>
+                    <TailH1 title={'부산광역시_부산축제정보 서비스'} />
+                    <GiPartyPopper className='text-4xl mx-5' />
                 </div>
-                <div>
-                    {selectedValue && <p>Selected Value: {selectedValue}</p>}
-                </div>
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                    {selData}
-                </div>
+                <form name="kform" className="my-8 w-4/5 flex justify-center items-center">
+                    <div className="block text-sm font-medium leading-6 text-gray-900">
+                        <div className="relative mt-2 rounded-md shadow-sm">
+                            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                                <span className="text-gray-500 sm:text-sm"></span>
+                            </div>
+                            <input type="text" name="local" id="local" className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="입력 또는 선택" />
+                            <div className="absolute inset-y-0 right-0 flex items-center">
+                                <TailSelect opItem={gu} handleChange={handleChange} />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {tags}
             </div>
         </div>
     )
