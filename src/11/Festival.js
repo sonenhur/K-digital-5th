@@ -63,7 +63,7 @@ export default function Festival() {
         <div className="container mx-auto w-full h-screen">
             <div className="flex flex-col justify-top items-center w-full my-8">
                 <div className='flex'>
-                    <TailH1 title={'부산 축제 정보 서비스'} />
+                    <TailH1 title={'부산광역시 축제정보'} />
                     <GiPartyPopper className='text-4xl mx-5' />
                 </div>
                 <form name="kform" className="my-8 w-4/5 flex justify-center items-center">
