@@ -4,10 +4,12 @@ export default function TailSelect({ opItem, handleChange }) {
     );
 
     return (
-        <select onChange={handleChange}
-            className='bg-gray-50 border border-gray-300 text-gray-900'>
-            <option value=''>--선택--</option>
+        <select
+            onChange={handleChange}
+            className="appearance-none border rounded-md py-2 px-4 bg-white text-gray-700 leading-tight focus:outline-none focus:border-teal-500"
+        >
+            <option value="">-- 선택 --</option>
             {ops}
         </select>
-    )
+    );
 }
