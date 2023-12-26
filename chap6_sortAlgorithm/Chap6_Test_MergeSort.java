@@ -83,4 +83,8 @@ public class Chap6_Test_MergeSort {
             return this.height - o.height;
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e3ddfa489db8c865c3c305805bdd3e85bac65d6e
