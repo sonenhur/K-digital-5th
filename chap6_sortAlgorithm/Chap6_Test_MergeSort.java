@@ -14,6 +14,7 @@ public class Chap6_Test_MergeSort {
         while (i <= righta && j <= rightb) {
             buff[k++] = (a[i].compareTo(a[j]) <= 0) ? a[i++] : a[j++];
         }
+
         while (i <= righta) {
             buff[k++] = a[i++];
         }
@@ -28,7 +29,7 @@ public class Chap6_Test_MergeSort {
     }
 
     // --- MergeSort(비재귀 버전)---//
-    static void MergeSort(PhyscData[] a, int n) {
+    static void mergeSort(PhyscData[] a, int n) {
         int size;
         int lefta, righta, leftb, rightb;
 
@@ -46,25 +47,27 @@ public class Chap6_Test_MergeSort {
 
     public static void main(String[] args) {
         PhyscData[] x = {
-                new PhyscData("강민하", 162, 0.3),
-                new PhyscData("김찬우", 173, 0.7),
-                new PhyscData("박준서", 171, 2.0),
-                new PhyscData("유서범", 171, 1.5),
-                new PhyscData("이수연", 168, 0.4),
-                new PhyscData("장경오", 171, 1.2),
-                new PhyscData("황지안", 169, 0.8),
+            new PhyscData("강민하", 162, 0.3),
+            new PhyscData("김찬우", 173, 0.7),
+            new PhyscData("박준서", 171, 2.0),
+            new PhyscData("유서범", 171, 1.5),
+            new PhyscData("이수연", 168, 0.4),
+            new PhyscData("장경오", 171, 1.2),
+            new PhyscData("황지안", 169, 0.8),
         };
+
         int nx = x.length;
         buff = new PhyscData[nx]; // 작업용 배열 buff 크기 조정
 
-        MergeSort(x, nx); // 배열 x를 MergeSort로 정렬
+        mergeSort(x, nx); // 배열 x를 MergeSort로 정렬
 
         System.out.println("오름차순으로 정렬했습니다.");
         System.out.println("■ 신체검사 리스트 ■");
         System.out.println(" 이름     키  시력");
         System.out.println("------------------");
-        for (PhyscData physcData : x)
+        for (PhyscData physcData : x) {
             System.out.printf("%-8s%3d%5.1f\n", physcData.name, physcData.height, physcData.vision);
+        }
     }
 
     static class PhyscData implements Comparable<PhyscData> {
@@ -83,8 +86,4 @@ public class Chap6_Test_MergeSort {
             return this.height - o.height;
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> e3ddfa489db8c865c3c305805bdd3e85bac65d6e
