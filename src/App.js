@@ -12,7 +12,8 @@ import './App.css';
 // import Festival from './11/Festival' ;
 // import Rmain from './12/Rmain';
 // import Frcst from './13/Frcst';
-import FrcstMain from './13/FrcstMain';
+// import FrcstMain from './13/FrcstMain';
+import Ex01 from './90/Ex01';
 
 function App() {
   return (     
@@ -28,7 +29,8 @@ function App() {
     // <Festival />
     // <Rmain />
     // <Frcst />
-    <FrcstMain />
+    // <FrcstMain />
+    <Ex01 />
   );
 }
 
