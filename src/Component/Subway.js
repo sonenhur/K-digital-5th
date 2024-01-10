@@ -1,9 +1,12 @@
-import React from 'react'
-
+import { useRecoilValue } from "recoil"
+import { stLogin } from "./StAtom"
+import SubwayInfo from "./SubwayInfo";
+import Login from "./Login";
 export default function Subway() {
+    const isLogin = useRecoilValue(stLogin);
     return (
         <div className='w-full h-full flex flex-col items-center justify-center'>
-            지하철 대기 정보
+            {isLogin ? <SubwayInfo /> : <Login />}
         </div>
     )
 }
