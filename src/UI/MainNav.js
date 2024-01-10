@@ -1,6 +1,10 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
+import { useRecoilValue } from 'recoil'
+import { stLogin } from '../Component/StAtom'
+
 export default function MainNav() {
+    const isLogin = useRecoilValue(stLogin);
+
     return (
         <nav className="flex items-center justify-between flex-wrap bg-sky-400 p-6">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
@@ -17,12 +21,18 @@ export default function MainNav() {
                     <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
                         <Link to='/home'>Home</Link>
                     </a>
+                    <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                        <Link to='/subway'>Subway</Link>
+                    </a>
+
                 </div>
                 <div>
                     <a href="#" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">
                         <Link to='/login'>Log in</Link>
+                        {isLogin ? "Log out" : "Log in"}
                     </a>
                 </div>
+
             </div>
         </nav>
     )
