@@ -1,12 +1,12 @@
-/*
 package chap6_sortAlgorithm;
 
 import java.util.Random;
 import java.util.Scanner;
 
 interface MaxHeap {
-	public void Insert(int x);
-	public int DeleteMax();
+    public void Insert(int x);
+
+    public int DeleteMax();
 }
 
 class Heap implements MaxHeap {
@@ -21,23 +21,50 @@ class Heap implements MaxHeap {
         heap = new int[MaxSize + 1];
     }
 
-	public void display() {
-		 System.out.print("MaxHeap:: (i, heap[i]): ");
-	        for (int i = 1; i <= n; i++) {
-	            System.out.print("(" + i + ", " + heap[i] + ") ");
-	        }
-	        System.out.println();
-	    }
-	
-	@Override
-	public void Insert(int x) {
+    public void display() {
+        System.out.print("MaxHeap:: (i, heap[i]): ");
+        for (int i = 1; i <= n; i++) {
+            System.out.print("(" + i + ", " + heap[i] + ") ");
+        }
+        System.out.println();
+    }
 
+    @Override
+    public void Insert(int x) {
+        if (n == MaxSize) {
+            HeapFull();
+            return;
+        }
+        int i = ++n;
+        while ((i != 1) && (x > heap[i / 2])) {
+            heap[i] = heap[i / 2];
+            i /= 2;
+        }
+        heap[i] = x;
+    }
 
-	}
-	@Override
-	public int DeleteMax() {
-
-	}
+    @Override
+    public int DeleteMax() {
+        if (n == 0) {
+            HeapEmpty();
+            return -1; // or throw exception
+        }
+        int item = heap[1]; // get the root value
+        int last = heap[n--]; // remove the last element and decrease the size
+        int parent = 1;
+        int child = 2;
+        while (child <= n) {
+            if (child < n && heap[child] < heap[child + 1])
+                child++;
+            if (last >= heap[child])
+                break;
+            heap[parent] = heap[child];
+            parent = child;
+            child *= 2;
+        }
+        heap[parent] = last;
+        return item;
+    }
 
     private void HeapEmpty() {
         System.out.println("Heap Empty");
@@ -54,7 +81,7 @@ public class Test_HeapSort {
             System.out.print(d[i] + " ");
         System.out.println();
     }
-    
+
     public static void main(String[] args) {
         Random rnd = new Random();
         int select = 0;
@@ -89,4 +116,4 @@ public class Test_HeapSort {
             }
         } while (select < 5);
     }
-}*/
+}

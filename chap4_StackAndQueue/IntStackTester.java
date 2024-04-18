@@ -1,6 +1,8 @@
-package chap4_stackAndQueue;
+package chap4_StackAndQueue;
 
 //int형 고정 길이 스택의 사용 예
+
+import chap5_recursive.IntStack;
 
 import java.util.Scanner;
 
