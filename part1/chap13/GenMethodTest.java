@@ -1,9 +1,11 @@
 package part1.chap13;
 
+import java.util.Objects;
+
 public class GenMethodTest {
 	static <T extends Number, V extends T> boolean isIncluded(T num, V[] array) {
 		for (int i = 0; i < array.length; i++) {
-			if (array[i] == num)
+			if (Objects.equals(array[i], num))
 				return true;
 		}
 		return false;
@@ -30,7 +32,7 @@ public class GenMethodTest {
 //		//extends Number로 제한했기 때문에 문자열은 에러
 //		isInclude("one",snum); 
 		
-		GenMethodTest.<Integer, Integer>isIncluded(3, inum);
-		GenMethodTest.<Double, Double>isIncluded(5.5, dnum);
+		GenMethodTest.isIncluded(3, inum);
+		GenMethodTest.isIncluded(5.5, dnum);
 	}
 }
