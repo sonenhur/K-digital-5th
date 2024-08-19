@@ -27,12 +27,12 @@ public class Test37 {
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
 
-        for (int i = 0; i < score.length; i++) {
-            sum += score[i];
-            if (score[i] > max) max = score[i];
-            if (score[i] < min) min = score[i];
+        for (int j : score) {
+            sum += j;
+            if (j > max) max = j;
+            if (j < min) min = j;
         }
-        double avg = sum / score.length;
+        double avg = (double) sum / score.length;
         System.out.println("총 점 : " + sum);
         System.out.println("평 균 : " + avg);
         System.out.println("최댓값 : " + max);
