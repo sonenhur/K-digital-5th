@@ -9,31 +9,31 @@ public class Point extends Geometry {
         this.y = y;
         addPoint(x, y);
     }
-    
+
     void draw() {
         System.out.println("Point at (" + x + ", " + y + ")");
     }
-    
+
     @Override
     public void addPoint(int x, int y) {
         super.addPoint(x, y);
     }
-    
+
     @Override
     public void printPoint() {
         super.printPoint();
     }
 
-	@Override
-	public double getLength() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+    @Override
+    public double getLength() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
 
-	@Override
-	public double getArea() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+    @Override
+    public double getArea() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
 
 }

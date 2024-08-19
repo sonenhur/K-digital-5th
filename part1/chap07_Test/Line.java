@@ -14,27 +14,27 @@ public class Line extends Geometry {
     void draw() {
         System.out.println("Line from (" + start.x + ", " + start.y + ") to (" + end.x + ", " + end.y + ")");
     }
-    
+
     @Override
     public void addPoint(int x, int y) {
         super.addPoint(x, y);
     }
-    
+
     @Override
     public void printPoint() {
         super.printPoint();
     }
 
-	@Override
-	public double getLength() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+    @Override
+    public double getLength() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
 
-	@Override
-	public double getArea() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+    @Override
+    public double getArea() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
 
 }

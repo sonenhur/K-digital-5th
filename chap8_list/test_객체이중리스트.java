@@ -4,6 +4,10 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 class SimpleObject2 {
+    // --- 회원번호로 순서를 매기는 comparator ---//
+    public static final Comparator<SimpleObject2> NO_ORDER = new NoOrderComparator();
+    // --- 이름으로 순서를 매기는 comparator ---//
+    public static final Comparator<SimpleObject2> NAME_ORDER = new NameOrderComparator();
     static final int NO = 1; // 번호를 읽어 들일까요?
     static final int NAME = 2; // 이름을 읽어 들일까요?
     String no; // 회원번호
@@ -40,18 +44,12 @@ class SimpleObject2 {
         }
     }
 
-    // --- 회원번호로 순서를 매기는 comparator ---//
-    public static final Comparator<SimpleObject2> NO_ORDER = new NoOrderComparator();
-
     private static class NoOrderComparator implements Comparator<SimpleObject2> {
         @Override
         public int compare(SimpleObject2 d1, SimpleObject2 d2) {
             return Integer.compare(d1.no.compareTo(d2.no), 0);
         }
     }
-
-    // --- 이름으로 순서를 매기는 comparator ---//
-    public static final Comparator<SimpleObject2> NAME_ORDER = new NameOrderComparator();
 
     private static class NameOrderComparator implements Comparator<SimpleObject2> {
         @Override
@@ -177,27 +175,6 @@ class DoubledLinkedList2 {
 }
 
 public class test_객체이중리스트 {
-    enum Menu {
-        Add("삽입"), Delete("삭제"), Show("인쇄"), Search("검색"), Merge("병합"), Exit("종료");
-
-        private final String message; // 표시할 문자열
-
-        static Menu MenuAt(int idx) { // 순서가 idx번째인 열거를 반환
-            for (Menu m : Menu.values())
-                if (m.ordinal() == idx)
-                    return m;
-            return null;
-        }
-
-        Menu(String string) { // 생성자(constructor)
-            message = string;
-        }
-
-        String getMessage() { // 표시할 문자열을 반환
-            return message;
-        }
-    }
-
     // --- 메뉴 선택 ---//
     static Menu SelectMenu() {
         Scanner sc1 = new Scanner(System.in);
@@ -264,5 +241,26 @@ public class test_객체이중리스트 {
                     break;
             }
         } while (menu != Menu.Exit);
+    }
+
+    enum Menu {
+        Add("삽입"), Delete("삭제"), Show("인쇄"), Search("검색"), Merge("병합"), Exit("종료");
+
+        private final String message; // 표시할 문자열
+
+        Menu(String string) { // 생성자(constructor)
+            message = string;
+        }
+
+        static Menu MenuAt(int idx) { // 순서가 idx번째인 열거를 반환
+            for (Menu m : Menu.values())
+                if (m.ordinal() == idx)
+                    return m;
+            return null;
+        }
+
+        String getMessage() { // 표시할 문자열을 반환
+            return message;
+        }
     }
 }

@@ -9,18 +9,6 @@ public class IntQueue {
     private int rear; // 맨 끝 요소 커서
     private int num; // 현재 데이터 개수
 
-    // --- 실행시 예외: 큐가 비어있음 ---//
-    public class EmptyIntQueueException extends RuntimeException {
-        public EmptyIntQueueException() {
-        }
-    }
-
-    // --- 실행시 예외: 큐가 가득 찼음 ---//
-    public class OverflowIntQueueException extends RuntimeException {
-        public OverflowIntQueueException() {
-        }
-    }
-
     // --- 생성자(constructor) ---//
     public IntQueue(int maxlen) {
         num = front = rear = 0;
@@ -104,6 +92,18 @@ public class IntQueue {
             for (int i = 0; i < num; i++)
                 System.out.print(que[(i + front) % capacity] + " ");
             System.out.println();
+        }
+    }
+
+    // --- 실행시 예외: 큐가 비어있음 ---//
+    public class EmptyIntQueueException extends RuntimeException {
+        public EmptyIntQueueException() {
+        }
+    }
+
+    // --- 실행시 예외: 큐가 가득 찼음 ---//
+    public class OverflowIntQueueException extends RuntimeException {
+        public OverflowIntQueueException() {
         }
     }
 }

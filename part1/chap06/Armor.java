@@ -1,23 +1,23 @@
 package part1.chap06;
 
 public class Armor {
-	private String name;
-	private int height;
+    private String name;
+    private int height;
 
-	public String getName() {
-		return name;
-	}
-	
-	public void setName() {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public int getHeight() {
-		return height;
-	}
+    public void setName() {
+        this.name = name;
+    }
 
-	public void setHeight() {
-		this.height = height;
-	}
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight() {
+        this.height = height;
+    }
 
 }

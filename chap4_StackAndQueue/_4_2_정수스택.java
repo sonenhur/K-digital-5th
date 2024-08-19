@@ -5,6 +5,7 @@ package chap4_stackAndQueue;
  * 입력하여 실행 실습
  * 정수형 스택 소스 코드
  */
+
 import java.util.Scanner;
 
 //정수형 고정 길이 스택을 구현한 클래스
@@ -12,18 +13,6 @@ class IntStack2 {
     private int[] stk; // 스택용 배열
     private int capacity; // 스택의 크기 (최대 몇 개를 쌓을 수 있는가?)
     private int ptr; // 스택 포인터 (쌓여있는 데이터 수)
-
-    // 스택이 비어있을 때 발생하는 예외
-    public class EmptyIntStackException extends RuntimeException {
-        public EmptyIntStackException() {
-        }
-    }
-
-    // 스택이 가득 찼을 때 발생하는 예외
-    public class OverflowIntStackException extends RuntimeException {
-        public OverflowIntStackException() {
-        }
-    }
 
     // 생성자: 스택의 크기를 받아 초기화
     public IntStack2(int maxlen) {
@@ -98,6 +87,18 @@ class IntStack2 {
             for (int i = 0; i < ptr; i++)
                 System.out.println(stk[i] + " ");
             System.out.println();
+        }
+    }
+
+    // 스택이 비어있을 때 발생하는 예외
+    public class EmptyIntStackException extends RuntimeException {
+        public EmptyIntStackException() {
+        }
+    }
+
+    // 스택이 가득 찼을 때 발생하는 예외
+    public class OverflowIntStackException extends RuntimeException {
+        public OverflowIntStackException() {
         }
     }
 }

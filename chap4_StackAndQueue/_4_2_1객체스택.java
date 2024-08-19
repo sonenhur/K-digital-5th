@@ -29,14 +29,14 @@ class Point2 {
         return ix;
     }
 
-    // y 좌표를 반환하는 메서드
-    public int getY() {
-        return iy;
-    }
-
     // x 좌표를 설정하는 메서드
     public void setX(int x) {
         ix = x;
+    }
+
+    // y 좌표를 반환하는 메서드
+    public int getY() {
+        return iy;
     }
 
     // y 좌표를 설정하는 메서드
@@ -56,25 +56,9 @@ class Point2 {
 
 // objectStack 클래스: Point2 객체를 push, pop하는 스택 구현
 class objectStack {
-    // 실행시 예외: 스택이 비어있음
-    public class EmptyGenericStackException extends Exception {
-        private static final long serialVersionUID = 1L;
-
-        public EmptyGenericStackException() {
-            super();
-        }
-    }
-
-    // 실행시 예외: 스택이 가득 참
-    public class OverflowGenericStackException extends RuntimeException {
-        public OverflowGenericStackException() {
-        }
-    }
-
     private List<Point2> data; // 스택용 배열
     private int capacity; // 스택의 크기
     private int top; // 스택 포인터
-
     // 생성자: 스택의 크기를 받아서 초기화
     public objectStack(int capacity) {
         this.capacity = capacity;
@@ -153,6 +137,21 @@ class objectStack {
             for (int i = 0; i < top; i++)
                 System.out.print(data.get(i) + " ");
             System.out.println();
+        }
+    }
+
+    // 실행시 예외: 스택이 비어있음
+    public class EmptyGenericStackException extends Exception {
+        private static final long serialVersionUID = 1L;
+
+        public EmptyGenericStackException() {
+            super();
+        }
+    }
+
+    // 실행시 예외: 스택이 가득 참
+    public class OverflowGenericStackException extends RuntimeException {
+        public OverflowGenericStackException() {
         }
     }
 }

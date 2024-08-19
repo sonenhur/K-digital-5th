@@ -1,7 +1,7 @@
 package part1.chap04;
 
 public class Test37 {
-//	public static void main(String[] args) {
+    //	public static void main(String[] args) {
 //		int[] score = {90, 85, 78, 100, 98};
 //		int sum = 0; // 총점
 //		double avg = 0.0; // 평균

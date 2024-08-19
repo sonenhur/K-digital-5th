@@ -7,16 +7,6 @@ public class IntStack {
     private int capacity;        // 스택의 크기
     private int ptr;                // 스택 포인터
 
-    //--- 실행시 예외 : 스택이 비어있음 ---//
-    public class EmptyIntStackException extends RuntimeException {
-        public EmptyIntStackException() { }
-    }
-
-    //--- 실행시 예외 : 스택이 가득 참 ---//
-    public class OverflowIntStackException extends RuntimeException {
-        public OverflowIntStackException() { }
-    }
-
     //--- 생성자(constructor) ---//
     public IntStack(int maxlen) {
         ptr = 0;
@@ -90,6 +80,18 @@ public class IntStack {
             for (int i = 0; i < ptr; i++)
                 System.out.print(stk[i] + " ");
             System.out.println();
+        }
+    }
+
+    //--- 실행시 예외 : 스택이 비어있음 ---//
+    public class EmptyIntStackException extends RuntimeException {
+        public EmptyIntStackException() {
+        }
+    }
+
+    //--- 실행시 예외 : 스택이 가득 참 ---//
+    public class OverflowIntStackException extends RuntimeException {
+        public OverflowIntStackException() {
         }
     }
 }

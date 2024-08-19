@@ -1,19 +1,30 @@
-
 package chap5_recursive;
 
 //https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/?ref=lbp
 //모든 해가 나오는 버젼 만들기
 // 필요한 클래스 가져오기
 class Stack3 {
+    private static int top; // 최상위 요소의 인덱스
     private Point[] array; // 포인트를 저장하는 배열
     private int maxSize; // 스택의 최대 크기
-    private static int top; // 최상위 요소의 인덱스
 
     // 스택 생성자: 주어진 크기로 스택을 초기화함
     public Stack3(int size) {
         maxSize = size;
         array = new Point[maxSize];
         top = -1; // 빈 스택을 나타내기 위해 -1로 초기화
+    }
+
+    // 스택의 내용을 출력
+    public static void dumpStack(Stack3 stack) {
+        if (top <= 0)
+            System.out.println("스택이 비어있습니다.");
+        else {
+            for (int i = 0; i <= stack.getTop(); i++) {
+                System.out.println("[" + stack.getArray()[i].x + ", " + stack.getArray()[i].y + "]");
+            }
+            System.out.println("");
+        }
     }
 
     // 스택에 원소 추가
@@ -39,18 +50,6 @@ class Stack3 {
     // 스택의 배열 반환
     public Point[] getArray() {
         return array;
-    }
-
-    // 스택의 내용을 출력
-    public static void dumpStack(Stack3 stack) {
-        if (top <= 0)
-            System.out.println("스택이 비어있습니다.");
-        else {
-            for (int i = 0; i <= stack.getTop(); i++) {
-                System.out.println("[" + stack.getArray()[i].x + ", " + stack.getArray()[i].y + "]");
-            }
-            System.out.println("");
-        }
     }
 }
 

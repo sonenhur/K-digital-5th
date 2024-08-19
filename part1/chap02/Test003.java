@@ -27,7 +27,7 @@ public class Test003 {
         int balance = 100;
         System.out.println(gender != 'F' & balance++ > 10);
         System.out.println(gender != 'F' && balance++ > 10);
-        System.out.println(!(gender != 'F') || balance++ >10);
+        System.out.println(!(gender != 'F') || balance++ > 10);
         System.out.println(balance);
     }
 

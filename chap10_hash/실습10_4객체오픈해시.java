@@ -35,51 +35,6 @@ class SimpleObject2 {
 }
 
 class OpenHash {
-    // --- 버킷의 상태 ---//
-    enum Status {
-        OCCUPIED, EMPTY, DELETED
-    } // {데이터 저장, 비어있음, 삭제 완료}
-
-    // --- 버킷 ---//
-    static class Bucket {
-        private SimpleObject2 data; // 데이터
-        private Status stat; // 상태
-
-        // 생성자
-        Bucket() {
-            stat = Status.EMPTY; // 버킷을 비어있는 상태로 초기화
-        }
-    }
-
-    // 열거형 Menu 추가
-    public enum Menu {
-        ADD("추가"),
-        REMOVE("삭제"),
-        SEARCH("검색"),
-        DUMP("표시"),
-        TERMINATE("종료");
-
-        private final String message;
-
-        Menu(String message) {
-            this.message = message;
-        }
-
-        public String getMessage() {
-            return message;
-        }
-
-        // 인덱스에 해당하는 메뉴 반환
-        public static Menu MenuAt(int idx) {
-            for (Menu m : Menu.values()) {
-                if (m.ordinal() == idx) {
-                    return m;
-                }
-            }
-            return null;
-        }
-    }
-
     private int size; // 해시 테이블의 크기
     private Bucket[] table; // 해시 테이블
 
@@ -173,6 +128,51 @@ class OpenHash {
                     System.out.println("삭제 완료");
                     break;
             }
+        }
+    }
+
+    // --- 버킷의 상태 ---//
+    enum Status {
+        OCCUPIED, EMPTY, DELETED
+    } // {데이터 저장, 비어있음, 삭제 완료}
+
+    // 열거형 Menu 추가
+    public enum Menu {
+        ADD("추가"),
+        REMOVE("삭제"),
+        SEARCH("검색"),
+        DUMP("표시"),
+        TERMINATE("종료");
+
+        private final String message;
+
+        Menu(String message) {
+            this.message = message;
+        }
+
+        // 인덱스에 해당하는 메뉴 반환
+        public static Menu MenuAt(int idx) {
+            for (Menu m : Menu.values()) {
+                if (m.ordinal() == idx) {
+                    return m;
+                }
+            }
+            return null;
+        }
+
+        public String getMessage() {
+            return message;
+        }
+    }
+
+    // --- 버킷 ---//
+    static class Bucket {
+        private SimpleObject2 data; // 데이터
+        private Status stat; // 상태
+
+        // 생성자
+        Bucket() {
+            stat = Status.EMPTY; // 버킷을 비어있는 상태로 초기화
         }
     }
 }

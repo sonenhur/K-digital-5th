@@ -3,7 +3,7 @@ package chap5_recursive;
 import java.util.ArrayList;
 import java.util.List;
 
-enum Directions2 { N, NE, E, SE, S, SW, W, NW }
+enum Directions2 {N, NE, E, SE, S, SW, W, NW}
 
 class Items3 {
     int x;
@@ -36,18 +36,6 @@ class StackList {
     private List<Items3> data; // 스택용 배열
     private int capacity; // 스택의 크기
     private int top; // 스택 포인터
-
-    // --- 스택이 비어있음을 나타내는 예외 클래스 ---//
-    public class EmptyIntStackException extends RuntimeException {
-        public EmptyIntStackException() {
-        }
-    }
-
-    // --- 스택이 가득 참을 나타내는 예외 클래스 ---//
-    public class OverflowIntStackException extends RuntimeException {
-        public OverflowIntStackException() {
-        }
-    }
 
     // --- 생성자(constructor) ---//
     public StackList(int maxlen) {
@@ -126,6 +114,18 @@ class StackList {
             System.out.println();
         }
     }
+
+    // --- 스택이 비어있음을 나타내는 예외 클래스 ---//
+    public class EmptyIntStackException extends RuntimeException {
+        public EmptyIntStackException() {
+        }
+    }
+
+    // --- 스택이 가득 참을 나타내는 예외 클래스 ---//
+    public class OverflowIntStackException extends RuntimeException {
+        public OverflowIntStackException() {
+        }
+    }
 }
 
 public class MazeProblem2023 {
@@ -168,7 +168,9 @@ public class MazeProblem2023 {
                 { // 다음에 이동할 방향
                     mark[i][j] = 1; // 방문한 위치를 표시
                     st.push(new Items3(i, j, d + 1));// 가기전에 키핑용 (세이브파일)
-                    i = g; j = h; d = 0; // 실제로 갔고, 방향을 초기화
+                    i = g;
+                    j = h;
+                    d = 0; // 실제로 갔고, 방향을 초기화
                 } else
                     d++;
             }
@@ -190,38 +192,46 @@ public class MazeProblem2023 {
         int[][] mark = new int[14][17];
 
         int[][] input = { // 12 x 15
-                { 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1 },
-                { 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1 },
-                { 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1 },
-                { 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0 },
-                { 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1 },
-                { 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1 },
-                { 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1 },
-                { 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1 },
-                { 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1 },
-                { 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0 },
-                { 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0 },
-                { 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0 } };
+                {0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1},
+                {1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1},
+                {0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1},
+                {1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0},
+                {1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1},
+                {0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1},
+                {0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1},
+                {0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1},
+                {0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1},
+                {1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0},
+                {0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0},
+                {0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0}};
 
         // input[][]을 maze[][]로 변환
         for (int i = 0; i < 14; i++) {
             for (int j = 0; j < 17; j++) {
-                if (i==0 || i==13 || j == 0 || j == 16)
+                if (i == 0 || i == 13 || j == 0 || j == 16)
                     maze[i][j] = 1;
-                else maze[i][j] = input[i-1][j-1];
+                else maze[i][j] = input[i - 1][j - 1];
             }
         }
 
         for (int ia = 0; ia < 8; ia++)
             moves[ia] = new Offsets3(0, 0);// 배열에 offsets 객체를 치환해야 한다.
-        moves[0].a = -1;	moves[0].b = 0;
-        moves[1].a = -1;	moves[1].b = 1;
-        moves[2].a = 0;		moves[2].b = 1;
-        moves[3].a = 1;		moves[3].b = 1;
-        moves[4].a = 1;		moves[4].b = 0;
-        moves[5].a = 1;		moves[5].b = -1;
-        moves[6].a = 0;		moves[6].b = -1;
-        moves[7].a = -1;	moves[7].b = -1;
+        moves[0].a = -1;
+        moves[0].b = 0;
+        moves[1].a = -1;
+        moves[1].b = 1;
+        moves[2].a = 0;
+        moves[2].b = 1;
+        moves[3].a = 1;
+        moves[3].b = 1;
+        moves[4].a = 1;
+        moves[4].b = 0;
+        moves[5].a = 1;
+        moves[5].b = -1;
+        moves[6].a = 0;
+        moves[6].b = -1;
+        moves[7].a = -1;
+        moves[7].b = -1;
 
         System.out.println("maze[12,15]::");
         showMatrix(maze, 13, 16);

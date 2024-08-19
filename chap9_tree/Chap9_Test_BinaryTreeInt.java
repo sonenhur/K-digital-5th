@@ -194,27 +194,6 @@ class Tree {
 }
 
 public class Chap9_Test_BinaryTreeInt {
-    enum Menu {
-        Add("삽입"), Delete("삭제"), Search("검색"), InorderPrint("순차출력"), Exit("종료");
-
-        private final String message; // 표시할 문자열
-
-        static Menu MenuAt(int idx) { // 순서가 idx번째인 열거를 반환
-            for (Menu m : Menu.values())
-                if (m.ordinal() == idx)
-                    return m;
-            return null;
-        }
-
-        Menu(String string) { // 생성자(constructor)
-            message = string;
-        }
-
-        String getMessage() { // 표시할 문자열을 반환
-            return message;
-        }
-    }
-
     // --- 메뉴 선택 ---//
     static Menu SelectMenu() {
         Scanner stdIn = new Scanner(System.in);
@@ -279,5 +258,26 @@ public class Chap9_Test_BinaryTreeInt {
                     break;
             }
         } while (menu != Menu.Exit);
+    }
+
+    enum Menu {
+        Add("삽입"), Delete("삭제"), Search("검색"), InorderPrint("순차출력"), Exit("종료");
+
+        private final String message; // 표시할 문자열
+
+        Menu(String string) { // 생성자(constructor)
+            message = string;
+        }
+
+        static Menu MenuAt(int idx) { // 순서가 idx번째인 열거를 반환
+            for (Menu m : Menu.values())
+                if (m.ordinal() == idx)
+                    return m;
+            return null;
+        }
+
+        String getMessage() { // 표시할 문자열을 반환
+            return message;
+        }
     }
 }

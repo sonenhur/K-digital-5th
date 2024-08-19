@@ -1,7 +1,7 @@
 package chap10_hash;
 
-import java.util.Scanner;
 import java.util.Comparator;
+import java.util.Scanner;
 
 class SimpleObject5 {
     static final int NO = 1;
@@ -26,21 +26,8 @@ class SimpleObject5 {
 }
 
 class ChainHash5 {
-    //--- 해시를 구성하는 노드 ---//
-    static class Node2 {
-        private final SimpleObject5 data; // 키값
-        private Node2 next; // 뒤쪽 포인터(뒤쪽 노드에 대한 참조)
-
-        // 생성자(constructor)
-        Node2(SimpleObject5 data, Node2 next) {
-            this.data = data;
-            this.next = next;
-        }
-    }
-
     private int size; // 해시 테이블의 크기
     private Node2[] table; // 해시 테이블
-
     // 생성자(constructor)
     public ChainHash5(int capacity) {
         try {
@@ -122,30 +109,21 @@ class ChainHash5 {
             hash += key.charAt(i);
         return hash % size;
     }
+
+    //--- 해시를 구성하는 노드 ---//
+    static class Node2 {
+        private final SimpleObject5 data; // 키값
+        private Node2 next; // 뒤쪽 포인터(뒤쪽 노드에 대한 참조)
+
+        // 생성자(constructor)
+        Node2(SimpleObject5 data, Node2 next) {
+            this.data = data;
+            this.next = next;
+        }
+    }
 }
 
 public class 실습10_2객체체인해시 {
-    enum Menu {
-        Add("삽입"), Delete("삭제"), Search("검색"), Show("출력"), Exit("종료");
-
-        private final String message; // 표시할 문자열
-
-        static Menu MenuAt(int idx) { // 순서가 idx번째인 열거를 반환
-            for (Menu m : Menu.values())
-                if (m.ordinal() == idx)
-                    return m;
-            return null;
-        }
-
-        Menu(String string) { // 생성자(constructor)
-            message = string;
-        }
-
-        String getMessage() { // 표시할 문자열을 반환
-            return message;
-        }
-    }
-
     // --- 메뉴 선택 ---//
     static Menu SelectMenu() {
         Scanner sc = new Scanner(System.in);
@@ -202,5 +180,26 @@ public class 실습10_2객체체인해시 {
                     break;
             }
         } while (menu != Menu.Exit);
+    }
+
+    enum Menu {
+        Add("삽입"), Delete("삭제"), Search("검색"), Show("출력"), Exit("종료");
+
+        private final String message; // 표시할 문자열
+
+        Menu(String string) { // 생성자(constructor)
+            message = string;
+        }
+
+        static Menu MenuAt(int idx) { // 순서가 idx번째인 열거를 반환
+            for (Menu m : Menu.values())
+                if (m.ordinal() == idx)
+                    return m;
+            return null;
+        }
+
+        String getMessage() { // 표시할 문자열을 반환
+            return message;
+        }
     }
 }

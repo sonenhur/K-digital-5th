@@ -2,6 +2,7 @@ package chap3_searchingAlgorithm;
 
 // 3장 - 1번 실습 과제 > 2번 실습: 스트링 객체의 정렬과 이진 탐색 > 3번 실습: 객체 정렬과 이진 탐색
 // comparator 구현 실습
+
 import java.util.Arrays;
 import java.util.Random;
 
