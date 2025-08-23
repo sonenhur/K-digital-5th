@@ -1,5 +1,5 @@
-import style from './__Lotto.module.css'
-import { useState } from 'react'
+import { useState } from 'react';
+import style from './__Lotto.module.css';
 export default function Lotto() {
     const [tags, setTags] = useState();
     const handleClick = (e) => {

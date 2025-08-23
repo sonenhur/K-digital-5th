@@ -1,5 +1,5 @@
-import Div3 from './Div3';
 import { useRecoilValue } from 'recoil';
+import Div3 from './Div3';
 import { divn3 } from './DivAtoms';
 export default function Div2() {
     const n3 = useRecoilValue(divn3)

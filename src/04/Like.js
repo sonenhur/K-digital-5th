@@ -1,5 +1,5 @@
-import style from './Like.module.css'
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import style from './Like.module.css';
 
 export default function Like() {
     //let cnt = 0;

@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
-import TailH1 from '../UI/TailH1';
+import { useEffect, useRef, useState } from 'react';
+import { FcLandscape, FcNightLandscape } from "react-icons/fc";
 import TailButton from '../UI/TailButton';
 import TailCard from '../UI/TailCard';
-import { FcLandscape, FcNightLandscape } from "react-icons/fc";
+import TailH1 from '../UI/TailH1';
 
 const apikey = process.env.REACT_APP_APIKEY;
 

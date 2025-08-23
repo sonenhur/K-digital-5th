@@ -1,5 +1,5 @@
-import TailButton from '../UI/TailButton';
 import { useRecoilState, useRecoilValue } from 'recoil';
+import TailButton from '../UI/TailButton';
 import { divn, divn4 } from './DivAtoms';
 export default function Div3() {
     const [n, setN] = useRecoilState(divn);

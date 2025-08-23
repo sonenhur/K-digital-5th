@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
-import TailH1 from '../UI/TailH1';
-import TailCard from '../UI/TailCard';
+import { useEffect, useState } from 'react';
 import { GiPartyPopper } from "react-icons/gi";
+import TailCard from '../UI/TailCard';
+import TailH1 from '../UI/TailH1';
 import TailSelect from '../UI/TailSelect';
 
 export default function Festival() {

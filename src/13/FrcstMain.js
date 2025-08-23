@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom" ;
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Frcst from "./Frcst";
 import FrcstDetail from "./FrcstDetail";
 import FrcstHeader from "./FrcstHeader";

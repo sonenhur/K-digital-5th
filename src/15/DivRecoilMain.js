@@ -3,7 +3,7 @@ import DivMain from "./DivMain"
 export default function DivRecoilMain() {
   return (
     <RecoilRoot>
-        <DivMain />
+      <DivMain />
     </RecoilRoot>
   )
 }

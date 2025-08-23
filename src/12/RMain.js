@@ -1,8 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import RHome from "./RHome"
+import RNav from "./RNav"
 import RPage1 from "./RPage1"
 import RPage2 from "./RPage2"
-import RNav from "./RNav"
 export default function RMain() {
     return (
         <main className="container mx-auto">

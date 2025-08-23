@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useRef, useState } from "react";
 import TailButton from "../UI/TailButton";
 import TailH1 from "../UI/TailH1";
 import TailInputNum from "../UI/TailInputNum";

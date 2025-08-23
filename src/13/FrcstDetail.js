@@ -1,5 +1,5 @@
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useState, useEffect } from "react";
 import getxy from "./getxy.json";
 
 export default function FrcstDetail() {
@@ -27,7 +27,7 @@ export default function FrcstDetail() {
     const data = await resp.json();
 
     let tm = data.response.body.items.item;
-    setTdata(tm) ;
+    setTdata(tm);
 
   }
 
@@ -52,7 +52,7 @@ export default function FrcstDetail() {
   }, []);
 
   useEffect(() => {
-  
+
     let tm = tdata.map((item, idx) =>
       <div key={`d${idx}`}>
         <div>{item['category']}</div>
@@ -61,9 +61,9 @@ export default function FrcstDetail() {
       </div>
     );
 
-    setTag(tm) ;
+    setTag(tm);
 
-  } , [tdata]);
+  }, [tdata]);
 
   return (
     <div className="flex flex-col justify-top items-center w-full my-8">

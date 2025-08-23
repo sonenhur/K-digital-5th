@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react';
 import Div1 from './Div1';
 
 export default function DivMain() {

@@ -1,5 +1,5 @@
 import { useRecoilValue } from 'recoil';
-import {divn} from "./DivAtoms";
+import { divn } from "./DivAtoms";
 
 import Div1 from './Div1';
 

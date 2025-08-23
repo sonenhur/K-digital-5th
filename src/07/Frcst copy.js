@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import TailH1 from "../UI/TailH1";
 import TailBlueButton from "../UI/TailBlueButton";
+import TailH1 from "../UI/TailH1";
 import data from "./dataFrcst.json";
 
 export default function Frcst() {

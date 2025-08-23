@@ -1,94 +1,94 @@
-    /* Main */
-    .m {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #f8f8f8;
-        font-family: 'San Francisco', sans-serif;
-    }
+/* Main */
+.m {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f8f8;
+  font-family: "San Francisco", sans-serif;
+}
 
-    /* Section */
-    .sec {
-        width: 80%;
-        background-color: #fff;
-        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
-        border-radius: 12px;
-        padding: 20px;
-    }
+/* Section */
+.sec {
+  width: 80%;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+}
 
-    /* Form */
-    .fm {
-        display: flex;
-        flex-direction: column;
-    }
+/* Form */
+.fm {
+  display: flex;
+  flex-direction: column;
+}
 
-    /* Form Div */
-    .fdiv {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
+/* Form Div */
+.fdiv {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 
-    /* Div1 */
-    .div1 {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
+/* Div1 */
+.div1 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-    /* Button */
-    .bt {
-        background-color: #007aff;
-        color: #fff;
-        border: none;
-        border-radius: 12px;
-        padding: 10px 20px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background-color 0.3s ease;
-    }
+/* Button */
+.bt {
+  background-color: #007aff;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
 
-    .bt:hover {
-        background-color: #0051d4;
-    }
+.bt:hover {
+  background-color: #0051d4;
+}
 
-    /* Span */
-    .sp {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 40px;
-        height: 40px;
-        margin: 5px;
-        background-color: #007aff;
-        color: #fff;
-        border-radius: 50%;
-        font-size: 16px;
-    }
+/* Span */
+.sp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  background-color: #007aff;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 16px;
+}
 
-    #sp0 {
-        background-color: #F1433F;
-    }
+#sp0 {
+  background-color: #f1433f;
+}
 
-    #sp1 {
-        background-color: #F7E967;
-    }
+#sp1 {
+  background-color: #f7e967;
+}
 
-    #sp2 {
-        background-color: #A9CF54;
-    }
+#sp2 {
+  background-color: #a9cf54;
+}
 
-    #sp3 {
-        background-color: #70B7BA;
-    }
+#sp3 {
+  background-color: #70b7ba;
+}
 
-    #sp4 {
-        background-color: #3D4C53;
-    }
+#sp4 {
+  background-color: #3d4c53;
+}
 
-    /* Plus */
-    #plus {
-        background-color: #fff;
-        color: #007aff;
-    }
+/* Plus */
+#plus {
+  background-color: #fff;
+  color: #007aff;
+}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import TailH1 from "../UI/TailH1";
 import TailButton from "../UI/TailButton";
+import TailH1 from "../UI/TailH1";
 
 export default function Frcst() {
     // 상태 변수

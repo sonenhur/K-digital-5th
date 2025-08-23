@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef } from "react";
-import TailH1 from "../UI/TailH1";
+import { useEffect, useRef, useState } from "react";
 import { RiMovie2Line } from "react-icons/ri";
+import TailH1 from "../UI/TailH1";
 
 export default function BoxOffice() {
     const [trs, setTrs] = useState([]);

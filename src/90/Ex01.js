@@ -1,5 +1,5 @@
+import { useEffect, useRef, useState } from "react";
 import MyButton from "./MyButton";
-import { useState, useEffect, useRef } from "react";
 export default function Ex01() {
 
     const arr = ['안녕하세요', '반갑습니다', '추워요'];
@@ -35,9 +35,9 @@ export default function Ex01() {
     const inRef = useRef();
 
     const handleClick = (msg) => {
-         // setTagMsg(`${inRef.current.value}님 ${msg}`)
+        // setTagMsg(`${inRef.current.value}님 ${msg}`)
 
-        inRef.current.value === ''? setTagMsg(msg) : setTagMsg(`${inRef.current.value}님 ${msg}`)
+        inRef.current.value === '' ? setTagMsg(msg) : setTagMsg(`${inRef.current.value}님 ${msg}`)
         //삼항연산 A === '' ? B : C (A가 ''이면 B, 아니면 C)
     }
     const [tagMsg, setTagMsg] = useState(arr[0]);

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import TailH1 from '../UI/TailH1';
 import TrafficNav from './TrafficNav';
 

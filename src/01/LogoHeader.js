@@ -1,6 +1,6 @@
+import LogoA from './LogoA';
 import LogoImg from './LogoImg';
 import LogoP from './LogoP';
-import LogoA from './LogoA';
 
 function LogoHeader() {
     return (

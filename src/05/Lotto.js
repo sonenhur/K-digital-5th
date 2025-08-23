@@ -1,5 +1,5 @@
+import { useEffect, useState } from 'react';
 import style from './Lotto.module.css';
-import { useState, useEffect } from 'react';
 
 export default function Lotto() {
     // let tags = "Lotto번호 생성기"
