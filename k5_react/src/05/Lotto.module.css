@@ -1,0 +1,83 @@
+.divLotto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.d1,
+.d2 {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bt {
+  color: #a2a2a2;
+  background-color: #2b2b2b;
+  cursor: pointer;
+  border: none;
+  border-radius: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 200px;
+  height: 40px;
+}
+
+.bt:hover {
+  background-color: #a2a2a2;
+  color: #2b2b2b;
+}
+
+.sp0,
+.sp1,
+.sp2,
+.sp3,
+.sp4 {
+  display: inline-flex;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+}
+
+.spp {
+  color: black;
+  font-size: xx-large;
+}
+
+.sp0 {
+  background-color: #f1433f;
+}
+
+.sp1 {
+  background-color: #f7e967;
+}
+
+.sp2 {
+  background-color: #a9cf54;
+}
+
+.sp3 {
+  background-color: #70b7ba;
+}
+
+.sp4 {
+  background-color: #3d4c53;
+}
+
+/* Plus */
+.plus {
+  background-color: #fff;
+  color: #007aff;
+}
