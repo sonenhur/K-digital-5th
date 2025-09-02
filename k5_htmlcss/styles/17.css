@@ -1,0 +1,96 @@
+form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fdiv {
+    width: 100%;
+}
+
+#d0 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+}
+
+.inDiv,
+fieldset {
+    width: 45%;
+}
+
+fieldset {
+    width: 40%;
+}
+
+.inDiv {
+    padding-top: 10px;
+    width: 40%;
+}
+
+.inDiv2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 20%;
+}
+
+#bt {
+    display: inline-flex;
+    margin-top: 15px;
+    width: 80%;
+}
+
+fieldset {
+    text-align: center;
+    padding: 10px;
+}
+
+table {
+    width: 100%;
+}
+
+table,
+th,
+td {
+    border: 1px solid gainsboro;
+    border-collapse: collapse;
+}
+
+th,
+tr {
+    height: 30px;
+}
+
+th {
+    background-color: gray;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: gainsboro;
+}
+
+.sp1 {
+    text-align: center;
+}
+
+.sp2 {
+    text-align: left;
+}
+
+.sp3 {
+    text-align: right;
+}
+
+input[type=date] {
+    display: inline-flex;
+    height: 40px;
+    width: 200px;
+    font-size: large;
+    font-weight: bold;
+}
